@@ -82,7 +82,7 @@
     background: white;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
-    display: flex;
+    display: none;
     position: absolute;
     width: 100vw; max-width: 1206px;
     left: -215px; top: 100%;
