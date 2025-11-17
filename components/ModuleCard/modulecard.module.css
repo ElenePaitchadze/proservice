@@ -1,0 +1,83 @@
+.card {
+    color: unset;
+    position: relative;
+    width: 100%; height: 100%;
+}
+
+.card:first-child { background: linear-gradient(90deg, #E6F2FA 0%, #CFEAF9 100%); }
+.card:nth-child(2) { background: linear-gradient(90deg, #FCE2EE 0%, #FABBD5 100%); }
+.card:nth-child(3) { background: linear-gradient(90deg, #3C487C 0%, #5D3C6D 100%); color: white; }
+.card:last-child { background: linear-gradient(90deg, #4768E5 0%, #2539A8 100%); color: white; }
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+    transform: rotate(-90deg) translate(-50%, 50%);
+    transform-origin: left bottom;
+    width: 84px;
+    position: absolute;
+    bottom: 50%; left: 50%;
+    transition: all 0.3s ease;
+}
+.card:nth-child(even) .titles { width: 48px; left: 47%; }
+
+.titles p:first-child {
+    font: 40px 'Helvetica Bold';
+    line-height: 45px;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.titles p:nth-child(2) {
+    font: 30px 'Helvetica Roman';
+    line-height: 36px;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.image {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s ease;
+    top: 120px; left: 50%;
+    transform: translateX(-50%);
+}
+
+.more {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font: 14px 'Helvetica Medium';
+    line-height: 17px;
+    position: absolute;
+    bottom: 40px; left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+    svg { transition: all 0.3s ease; }
+    path {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5;
+    }
+}
+
+.card:first-child .more { color: var(--primary-color); svg { stroke: var(--primary-color); } }
+.card:nth-child(2) .more { color: #5C5F62; svg { stroke: #5C5F62; } }
+.card:nth-child(2) .more:hover { color: black; svg { stroke: black; } }
+.card:nth-child(3) .more, .card:last-child .more { color: white; svg { stroke: white; } }
+
+.card:hover .titles {
+    transform: translate(-50%, -50%);
+    top: 90px; bottom: unset;
+    width: unset;
+    p:first-child { font-size: 20px; line-height: 24px; }
+    p:nth-child(2) { font-size: 16px; line-height: 20px; }
+}
+.card:nth-child(even):hover .titles { transform: translate(-47%, -50%); }
+
+.card:hover .image { opacity: 1; top: 155px; }
+.card:hover .more { opacity: 1; }
+.more:hover { gap: 20px; }

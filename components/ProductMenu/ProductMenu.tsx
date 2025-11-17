@@ -4,6 +4,10 @@ import { ProductMenu, IProdMenu } from './ProductMenuData';
 import styles from './productMenu.module.css';
 import HostingCloudMenu from './HostingCloudMenu';
 import ServiceMenu from './ServiceMenu';
+import ModuleMenu from './ModuleMenu';
+import PaymentMenu from './PaymentMenu';
+import { Link } from '@/i18n/navigation';
+import warning from '@/img/warning.svg';
 
 export default function ProdMenu() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -15,10 +19,10 @@ export default function ProdMenu() {
         return <HostingCloudMenu data={activeItem} />;
       case 'services':
         return <ServiceMenu data={activeItem} />;
-    //   case 'marketing':
-    //     return <MarketingMenu data={activeItem} />;
-    //   case 'support':
-    //     return <SupportMenu data={activeItem} />;
+      case 'modules':
+        return <ModuleMenu data={activeItem} />;
+      case 'payment':
+        return <PaymentMenu data={activeItem} />;
       default:
         return null;
     }
@@ -37,6 +41,10 @@ export default function ProdMenu() {
                 </svg>
             </div>
             ))}
+            <Link href={'/'} className={styles.warningLink}>
+              <img src={warning.src} alt="warning icon" />
+              <span>საზიარო პასუხისმგებლობა</span>
+            </Link>
         </div>
         { renderContent() }
     </>
