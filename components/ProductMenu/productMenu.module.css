@@ -341,7 +341,7 @@
     background: linear-gradient(90deg, #FAB6D1 0%, #FCE4F0 100%);
     padding: 20px 30px;
     p:first-child {
-        font: 12px 'Helvetica Roman'; /* helvetica Light*/
+        font: 12px 'Helvetica Light';
         line-height: 15px;
         margin-bottom: 0;
     }

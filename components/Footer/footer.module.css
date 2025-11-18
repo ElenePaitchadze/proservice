@@ -1,0 +1,137 @@
+.logo {
+  border-bottom: 1px solid #6A6E71;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.footertop {
+  border-bottom: 1px solid rgba(106, 110, 113, 0.21);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+}
+
+.footermenu {
+  p:first-child {
+    color: white;
+    font: 20px 'Gilroy GEO';
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+  ul { gap: 10px; max-width: 237px; }
+  a {
+    color: white;
+    text-decoration: none;
+    font: 12px 'BPG Mrgvlovani';
+    line-height: 16px;
+    transition: all 0.3s ease;
+    &:hover { color: var(--hover-color); }
+  }
+}
+
+.footermenu ul, .middleitem ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.head {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 16px 'BPG Mrgvlovani';
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+.footermiddle {
+  border-bottom: 1px solid #6A6E71;
+  padding-bottom: 45px;
+  margin-bottom: 40px;
+}
+
+.middlemenu {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.middleitem li {
+  color: white;
+  cursor: pointer;
+  font: 12px 'BPG Mrgvlovani';
+  line-height: 16px;
+}
+
+.middleitem > p, .ip p {
+  color: white;
+  font: 14px 'BPG Mrgvlovani';
+  line-height: 19px;
+  margin-bottom: 5px;
+}
+
+.copiedTag {
+  color: #22b067;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+.copied { transition: background 0.3s ease; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.ip span {
+  color: var(--primary-color);
+  font: 16px 'BPG Mrgvlovani';
+  line-height: 22px;
+}
+
+.footerbottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.owner {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font: 14px 'Helvetica Roman';
+  line-height: 17px;
+  a { color: unset; text-decoration: none; transition: all 0.3s ease;}
+  a:hover { color: var(--primary-color); }
+}
+
+.owner > div {
+  display: flex;
+  gap: 35px;
+  position: relative;
+  &::after, &::before {
+    content: '';
+    background: white;
+    width: 5px; height: 1px;
+    position: absolute;
+    top: 8px;
+  }
+  &::after { left: 103px; }
+  &::before { right: 70px; }
+}
+
+.iso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

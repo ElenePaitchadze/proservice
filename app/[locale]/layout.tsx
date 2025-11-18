@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata = {
   title: {
@@ -40,6 +41,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Header params={params} />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
