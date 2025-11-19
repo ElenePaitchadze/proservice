@@ -1,0 +1,114 @@
+.serverRoomCont { padding: 50px 20px; }
+.serverRoom {
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.rightSide {
+  width: calc(100% - 495px);
+  > p:first-child {
+    color: #2A2A2A;
+    font: 45px 'Helvetica Roman';
+    line-height: 55px;
+    max-width: 630px;
+    margin-bottom: 40px;
+  }
+}
+
+.iso {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  background: #F8F8F8;
+  border-radius: 10px 10px 0 0;
+  color: #2A2A2A;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 20px 'Helvetica Medium';
+  line-height: 24px;
+  height: 80px;
+  padding: 0 38px 0 30px;
+  svg { 
+    fill: #434343; 
+    transition: transform 0.3s ease; 
+    &.open { transform: rotate(180deg); }
+  }
+}
+
+.menuList {
+  background: #F8F8F8;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  max-height: 0;
+  font: 14px 'Helvetica Roman';
+  line-height: 17px;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
+  &.openList { max-height: 500px; }
+}
+
+.menuList ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 10px 40px 40px;
+}
+.closedList { max-height: 0; }
+
+.menuList img {
+  position: absolute;
+  opacity: 0.32;
+  width: 96px; 
+  top: 0; right: 60px;
+}
+
+.isoSection:last-child .menuList img  { width: 78px; height: 120px; object-fit: contain; }
+
+.leftSide {
+  width: 490px; height: 605px;
+  position: relative;
+}
+
+.leftSide > img {
+  border-radius: 10px;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transition: opacity 1.2s ease;
+}
+
+.img1 { opacity: 1; z-index: 2; }
+.img2 { opacity: 0; z-index: 1; }
+
+.leftSide::after {
+  content: '';
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(3px);
+  filter: brightness(0.) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.07));
+  border-radius: 10px;
+  position: absolute;
+  inset: 0; height: 100%;
+  transition: opacity 1.2s ease;
+  opacity: 1; z-index: 3;
+}
+
+.visible .img1 { opacity: 0; }
+.visible .img2 { opacity: 1; }
+.visible::after { opacity: 0; }
+
+.isoIcons {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  gap: 12px; z-index: 5;
+  left: 30px; bottom: 25px;
+  img { width: 42px; }
+  img:last-child { width: 30px; height: 70px; object-fit: contain; }
+}

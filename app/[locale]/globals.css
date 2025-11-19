@@ -137,7 +137,7 @@ footer {
 
 .newsPreview {
   background: #F9FAFB;
-  padding: 80px 20px 70px;
+  padding: 80px 20px 50px;
 }
 
 .newsDate {
@@ -154,6 +154,7 @@ footer {
   text-decoration: none;
   font: 14px 'Helvetica Medium';
   line-height: 17px;
+  height: 17px ;
   position: relative;
   width: 105px;
   svg {
@@ -175,3 +176,8 @@ footer {
 
 .learnMore:hover svg { right: -8px; }
 .learnMore:hover span { left: -8px; }
+
+.newsSwiperCont {
+  background: #F9FAFB;
+  padding: 0 20px 60px;
+}

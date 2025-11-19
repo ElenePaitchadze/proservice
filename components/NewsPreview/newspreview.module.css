@@ -54,7 +54,7 @@
   display: flex;
   align-items: flex-start;
   > img {
-    border: 10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
     width: 50%; height: 550px;
     object-fit: cover;
   }

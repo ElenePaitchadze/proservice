@@ -4,6 +4,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 import NewsPreview from '@/components/NewsPreview/NewsPreview';
 import newsImg from '@/img/newsDummy.png';
+import NewsSwiper from '@/components/NewsSwiper/NewsSwiper';
+import ServerRoom from '@/components/ServerRoom/ServerRoom';
 
 const newsItems = [
   { id: '127',
@@ -21,6 +23,7 @@ const newsItems = [
     desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
     desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
     date: '11 ნოე, 2025',
+    img: newsImg,
     slug: 'quality-hosting'
   },
   { id: '129',
@@ -29,6 +32,7 @@ const newsItems = [
     desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
     desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
     date: '11 ნოე, 2025',
+    img: newsImg,
     slug: 'golden-brand-winner'
   },
   { id: '130',
@@ -37,6 +41,7 @@ const newsItems = [
     desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
     desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
     date: '11 მაი, 2023',
+    img: newsImg,
     slug: 'news-for-new-users'
   },
 ]
@@ -48,6 +53,10 @@ export default function Home( { params }: { params: Promise<{ locale: string }>}
   const t = useTranslations('HomePage');
 
   return (
-    <NewsPreview news={newsItems[0]}/>
+    <div>
+      <ServerRoom />
+      <NewsPreview news={newsItems[0]}/>
+      <NewsSwiper news={newsItems.slice(0, 4)}/>
+    </div>
   );
 }
