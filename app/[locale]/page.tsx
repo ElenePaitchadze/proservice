@@ -3,9 +3,18 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 import NewsPreview from '@/components/NewsPreview/NewsPreview';
-import newsImg from '@/img/newsDummy.png';
 import NewsSwiper from '@/components/NewsSwiper/NewsSwiper';
 import ServerRoom from '@/components/ServerRoom/ServerRoom';
+import Portfolio from '@/components/Portfolio/Portfolio';
+import Banner from '@/components/Banner/Banner';
+
+import newsImg from '@/img/newsDummy.png';
+import sitelogo1 from '@/img/sitelogo1.png';
+import sitelogo2 from '@/img/sitelogo2.png';
+import sitelogo3 from '@/img/sitelogo3.png';
+import siteimg1 from '@/img/site1.png';
+import siteimg2 from '@/img/site2.png';
+import siteimg3 from '@/img/site3.png';
 
 const newsItems = [
   { id: '127',
@@ -44,6 +53,27 @@ const newsItems = [
     img: newsImg,
     slug: 'news-for-new-users'
   },
+];
+
+const portfolio = [
+  {
+    id: '1',
+    logo: sitelogo1,
+    img: siteimg1,
+    href: 'https://hotsale.ge/',
+  },
+  {
+    id: '2',
+    logo: sitelogo2,
+    img: siteimg2,
+    href: 'https://moneymuseum.nbg.gov.ge/',
+  },
+  {
+    id: '3',
+    logo: sitelogo3,
+    img: siteimg3,
+    href: 'https://foris.ge/',
+  }
 ]
 
 export default function Home( { params }: { params: Promise<{ locale: string }>} ) {
@@ -54,7 +84,9 @@ export default function Home( { params }: { params: Promise<{ locale: string }>}
 
   return (
     <div>
+      <Banner />
       <ServerRoom />
+      <Portfolio portfolios={portfolio} />
       <NewsPreview news={newsItems[0]}/>
       <NewsSwiper news={newsItems.slice(0, 4)}/>
     </div>

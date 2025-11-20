@@ -181,3 +181,15 @@ footer {
   background: #F9FAFB;
   padding: 0 20px 60px;
 }
+
+.portfolioSwiper .swiper-slide:nth-child(3n - 2) > a:first-child { background: url('../../img/swiperbg1.png') no-repeat center/cover; }
+.portfolioSwiper .swiper-slide:nth-child(3n - 2) > a:first-child::after { background: #F6F6F6; }
+.portfolioSwiper .swiper-slide:nth-child(3n - 2) > a:first-child:hover::after { background: rgba(246,246,246,0.81); }
+
+.portfolioSwiper .swiper-slide:nth-child(3n - 1) > a:first-child { background: url('../../img/swiperbg2.png') no-repeat center/cover; }
+.portfolioSwiper .swiper-slide:nth-child(3n - 1) > a:first-child::after { background: #E9E9E9; }
+.portfolioSwiper .swiper-slide:nth-child(3n - 1) > a:first-child:hover::after { background: rgba(233,233,233,0.61); }
+
+.portfolioSwiper .swiper-slide:nth-child(3n) > a:first-child { background: url('../../img/swiperbg3.png') no-repeat center/cover; }
+.portfolioSwiper .swiper-slide:nth-child(3n) > a:first-child::after { background: #D1D1D1; }
+.portfolioSwiper .swiper-slide:nth-child(3n) > a:first-child:hover::after { background: rgba(209,209,209,0.68); }

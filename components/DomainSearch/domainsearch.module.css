@@ -1,0 +1,36 @@
+.form {
+  background: rgba(255, 255, 255, 0.23);
+  border: 1px solid rgba(255, 255, 255, 0.31);
+  border-radius: 10px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 600fr 50fr 170fr;
+  margin-bottom: 45px;
+  gap: 14px;
+}
+
+.search {
+  background: white;
+  border: none;
+  border-radius: 5px;
+  font: 16px 'BPG LE Studio 02 Caps';
+  line-height: 21px;
+  padding: 0 20px;
+  width: 100%; height: 40px;
+  &:focus { outline: none; }
+}
+
+.form button {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  color: white;
+  cursor: pointer;
+  font: 14px 'BPG Mrgvlovani';
+  line-height: 19px; height: 40px;
+  transition: all 0.3s ease;
+  &:hover { background: var(--hover-color); }
+}
+

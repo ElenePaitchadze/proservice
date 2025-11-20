@@ -1,0 +1,29 @@
+.portfolioCont, .portfolio { width: 100%; }
+.portfolio { position: relative; } 
+
+.portfolio p:first-child {
+  text-align: center;
+  font: 26px 'Helvetica Roman';
+  line-height: 31px;
+  margin-bottom: 30px;
+}
+
+.prevBtn, .nextBtn {
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px; height: 27px;
+  position: absolute;
+  top: 53%;
+  z-index: 2;
+  transition: all 0.3s ease;
+  circle { fill: white; }
+  svg { fill: #d1d1d1; transition: all 0.3s ease; }
+}
+
+.prevBtn { left: 66px; &:hover { left: 56px; svg { fill: var(--primary-color);} } }
+.nextBtn { right: 66px; &:hover { right: 56px; svg { fill: var(--primary-color);} } }

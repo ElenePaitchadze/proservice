@@ -72,7 +72,7 @@ export default function ServerRoom() {
     <section className={`Container ${styles.serverRoomCont}`}>
       <div className={`content ${styles.serverRoom}`}>
         <div className={styles.rightSide}>
-          <p><b>მნიშვნელოვანია</b> იცოდე, სად ინახება შენს <b>ციფრული მონაცემები!</b></p>
+          <p><b>მნიშვნელოვანია</b> იცოდე, სად ინახება შენი <b>ციფრული მონაცემები!</b></p>
           <div className={styles.iso}>
             {isoInfo.map((info, index) => (
               <div key={index} className={styles.isoSection}>

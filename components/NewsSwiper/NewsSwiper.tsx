@@ -29,7 +29,6 @@ export default function NewsSwiper({ news }: { news: any[] }) {
             </SwiperSlide>
           ))}
         </Swiper>
-
       </div>
     </section>
   );
