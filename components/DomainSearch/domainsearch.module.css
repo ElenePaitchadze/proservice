@@ -10,13 +10,23 @@
   gap: 14px;
 }
 
+.inputCont {
+  position: relative;
+  span {
+    font: 16px 'BPG LE Studio 02 Caps';
+    line-height: 21px;
+    position: absolute;
+    left: 20px; top: 9px;
+  }
+}
+
 .search {
   background: white;
   border: none;
   border-radius: 5px;
   font: 16px 'BPG LE Studio 02 Caps';
   line-height: 21px;
-  padding: 0 20px;
+  padding: 0 20px 0 69px;
   width: 100%; height: 40px;
   &:focus { outline: none; }
 }
@@ -34,3 +44,39 @@
   &:hover { background: var(--hover-color); }
 }
 
+.extensions {
+  font: 14px 'BPG LE Studio 02 Caps';
+  line-height: 19px;
+  position: relative;
+  div {
+    background: #F8F8F8;
+    border-radius: 5px;
+    color: #434343;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; height: 40px;
+    -webkit-text-stroke: 0.5px #434343;
+  }
+  &.littleFont { font-size: 10px; }
+}
+
+.extensions ul {
+  background: var(--primary-color);
+  border-radius: 0 0 5px 5px;
+  color: white;
+  list-style: none;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  font: 14px 'BPG LE Studio 02 Caps';
+  line-height: 19px;
+  gap: 20px;
+  padding: 20px 0;
+  margin: 0; left: -20px;
+  width: 90px; position: absolute;
+  li { cursor: pointer; }
+}
+
+.extensions.active ul { display: flex; }

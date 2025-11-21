@@ -3,6 +3,7 @@
 
 .firstBannerCont {
   background: url("../../img/forest.png") center / cover no-repeat;
+  border-radius: 10px 10px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +13,7 @@
   &::after {
     content: '';
     background: rgba(20, 101, 82, 0.31);
+    border-radius: 10px 10px 0 0;
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -79,4 +81,86 @@
   -webkit-text-stroke: 0.5px black;
   img { filter: brightness(0) invert(0);}
   &:hover { gap: 15px; }
+}
+
+.SecondBanner {
+  background: url("../../img/bannerbg.png") center / cover no-repeat;
+  border-radius: 10px 10px 0 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  > img {
+    max-width: 495px;
+    object-fit: contain;
+  }
+}
+
+.secondText {
+  max-width: 423px;
+  a {
+    background: var(--primary-color);
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 16px 'BPG Mrgvlovani';
+    line-height: 19px;
+    width: 170px; height: 40px;
+    transition: all 0.3s ease;
+    &:hover { background: var(--hover-color); }
+  }
+}
+
+.secondText p:first-child {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 38px; line-height: 45px;
+  span:first-child { font-family: 'Helvetica Roman'; }
+  span:last-child { font-family: 'Helvetica Bold'; }
+}
+
+.secondText p:nth-child(2) {
+  color: #5C5F62;
+  font: 16px 'Helvetica Roman';
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.thirdBanner {
+  background: radial-gradient(farthest-corner at 50% 92%, #2fc4fc 0%, #6f83f2 35%, #222633 100%);
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 69px;
+  padding: 0 120px;
+  /* position: relative; */
+  /* &::after {
+    content: '';
+    backdrop-filter: blur(14px);
+    filter: brightness(1.15) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.07));
+    position: absolute;
+    opacity: 0.82;
+    top: 0; right: 0;
+    width: 100%; height: 80px;
+    z-index: 1;
+    pointer-events: none;
+  } */
+}
+
+.thirdText {
+  color: white;
+  max-width: 420px;
+  > p:first-child {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  span:first-child { font: 30px 'Helvetica Roman'; line-height: 36px; }
+  span:last-child { font: 40px 'Helvetica Bold'; line-height: 45px; }
+  p:last-child { font: 16px 'Helvetica Roman'; line-height: 20px; margin-bottom: 0; }
 }
