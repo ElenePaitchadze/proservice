@@ -7,6 +7,8 @@ import NewsSwiper from '@/components/NewsSwiper/NewsSwiper';
 import ServerRoom from '@/components/ServerRoom/ServerRoom';
 import Portfolio from '@/components/Portfolio/Portfolio';
 import Banner from '@/components/Banner/Banner';
+import Packages from '@/components/Packages/Packages';
+import InfoPreview from '@/components/InfoPreview/InfoPreview';
 
 import newsImg from '@/img/newsDummy.png';
 import sitelogo1 from '@/img/sitelogo1.png';
@@ -74,7 +76,7 @@ const portfolio = [
     img: siteimg3,
     href: 'https://foris.ge/',
   }
-]
+];
 
 export default function Home( { params }: { params: Promise<{ locale: string }>} ) {
   const { locale } = use(params);
@@ -85,7 +87,9 @@ export default function Home( { params }: { params: Promise<{ locale: string }>}
   return (
     <div>
       <Banner />
+      <Packages />
       <ServerRoom />
+      <InfoPreview />
       <Portfolio portfolios={portfolio} />
       <NewsPreview news={newsItems[0]}/>
       <NewsSwiper news={newsItems.slice(0, 4)}/>

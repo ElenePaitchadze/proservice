@@ -1,0 +1,19 @@
+.features { padding: 80px 0; }
+.marquee { overflow: hidden; }
+
+.track {
+  display: flex;
+  gap: 40px;
+  width: fit-content;
+  animation: scroll 20s linear infinite;
+}
+
+.track img {
+  display: block;
+  height: 50px; width: auto;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

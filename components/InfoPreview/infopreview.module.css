@@ -1,0 +1,51 @@
+.infoCont { padding-bottom: 50px; }
+.infogrid { 
+  position: relative;
+  width: 100%; height: 600px;
+}
+
+.domainCard {
+  background: url("../../img/domain-bg.png") center / cover no-repeat;
+  border-radius: 20px;
+  width: calc(50% - 10px); height: calc(50% - 10px);
+  padding: 55px 40px 0;
+  position: absolute; top: 0; left: 0; z-index: 1;
+  transition: all 0.3s ease;
+  &:hover { width: 100%; height: 100%; z-index: 2; }
+  &::after {
+    content: '';
+    background: linear-gradient(0deg, rgba(79, 114, 242, 0.9) 0%, rgba(56, 76, 190, 0.9) 100%);
+    border-radius: 20px;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  > * { position: relative; z-index: 2; }
+}
+
+.domainCard > div:first-child {
+  color: white;
+  p:first-child {
+    font: 30px 'Helvetica Roman';
+    line-height: 35px;
+    margin-bottom: 20px;
+  }
+  p:last-child {
+    font: 16px 'Helvetica Roman';
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+}
+
+.searchCont { 
+  width: 510px; 
+  position: absolute; 
+  right: 42px; top: 160px;
+  transition: all 0.3s ease;
+}
+
+.domainCard:hover .searchCont {
+  position: absolute;
+  width: 620px;
+  transform: translate(0, -100px);
+}
