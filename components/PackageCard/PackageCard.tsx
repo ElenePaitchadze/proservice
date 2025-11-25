@@ -2,7 +2,11 @@ import styles from './packagecard.module.css';
 
 export default function PackageCard({ data, category }: { data: any, category: string }) {
   return (
-    <div className={`${styles.card} ${data.popular ? styles.popular : ''} ${category == 'Wordpress' ? styles.card1 : ''}`}>
+    <div 
+      className={`${styles.card} 
+                  ${data.popular ? styles.popular : ''} 
+                  ${category == 'Wordpress' ? styles.card1 : ''}
+                  ${category == 'info' ? styles.card2: ''}`}>
       <div className={styles.tag}>პოპულარული</div>
       <p className={styles.name}>{data.name}</p>
       <p className={styles.price}><span>{data.price}</span><span>₾</span><span>/თვეში</span></p>

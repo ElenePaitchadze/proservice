@@ -84,3 +84,11 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: "DM Giorgi Khorguashvili";
+    src: url("../../fonts/dm-giorgi-khorguashvili.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -37,6 +37,7 @@
     img { filter: brightness(0) invert(1); }
   }
 }
+.packagesHead > a { width: 130px; }
 
 .packages {
   display: flex;

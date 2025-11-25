@@ -115,3 +115,12 @@
   opacity: 0;
   pointer-events: none;
 }
+
+/* for infopreview module */
+.card2 { padding: 50px 17px 20px; width: 265px; }
+.card2 .seeMore { display: none; }
+.card2, .card2:hover { height: 395px; }
+
+.card2 .services .service, .card2:hover .services .service { display: none; }
+.card2 .services .service:nth-child(-n+3), .card2:hover .services .service:nth-child(-n+3) { display: flex; }
+.card2 .services .service:last-child, .card2:hover .services .service:last-child  { display: flex; }
