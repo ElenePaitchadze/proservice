@@ -86,6 +86,14 @@
 }
 
 @font-face {
+    font-family: "Campton Light";
+    src: url("../../fonts/CamptonLight.otf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: "DM Giorgi Khorguashvili";
     src: url("../../fonts/dm-giorgi-khorguashvili.ttf");
     font-weight: normal;

@@ -27,12 +27,12 @@
 .desc {
   background: white;
   border-radius: 0 0 10px 10px;
-  padding: 50px 42px 30px 40px; 
+  padding: 30px 42px 30px 40px; 
   position: relative;
   > p:first-child {
     font: 18px 'Helvetica Medium';
     line-height: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: -webkit-box;
     height: 44px;
     overflow: hidden;
@@ -44,7 +44,7 @@
     color: #787878;
     font: 14px 'Helvetica Roman';
     line-height: 17px; 
-    margin-bottom: 50px;
+    margin-bottom: 43px;
     display: -webkit-box;
     max-height: 68px;
     overflow: hidden;

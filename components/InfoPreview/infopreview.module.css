@@ -25,7 +25,8 @@
 .domainCard.open { width: 100%; height: 100%; z-index: 2; }
 /* .domainCard:hover {  width: 100%; height: 100%; z-index: 2; } */
 
-.domainCard > div:first-child, .hostingCard > div:first-child {
+.domainCard > div:first-child, .hostingCard > div:first-child,
+.serverCard > div:first-child {
   color: white;
   p:first-child {
     font: 30px 'Helvetica Roman';
@@ -180,7 +181,7 @@
   &.open { width: 100%; height: 100%; z-index: 2; }
   &::after {
     content: '';
-    background: url("../../img/infodeocr.png") center / cover no-repeat;
+    background: url("../../img/infodecor.png") center / cover no-repeat;
     position: absolute;
     bottom: -135px; right: -100px;
     z-index: 2;
@@ -218,7 +219,116 @@
 .webCard.open > img:nth-child(2) { display: none; }
 
 .webCard {
-  > img { position: absolute; opacity: 0; }
+  > img { position: absolute; opacity: 0; transition: all 0.3s ease; }
   > img:nth-of-type(2) { top: 25px; left: 281px; }
-  > img:nth-of-type(3) { bottom: 45px; left: 281px; }
+  > img:nth-of-type(3) { bottom: 45px; left: 40px; }
+  > img:nth-of-type(4) { bottom: 121px; right: 24px; }
+  > img:nth-of-type(5) { top: 33px; right: 95px; }
+}
+
+.webCard.open > img { opacity: 0.33; }
+
+.latestwork {
+  position: relative;
+  width: 100%; max-width: 654px;
+  height: 350px;
+  margin: 20px auto 0;
+  transition: all 0.5s ease;
+  opacity: 0; visibility: hidden;
+  a {
+    position: absolute;
+    display: flex;
+    &:hover img { transform: scale(1.1); }
+  }
+  img { 
+    border-radius: 10px; 
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+}
+.webCard.open .latestwork { opacity: 1; visibility: visible; }
+
+.latestwork a:first-child { width: 125px; height: 134px; top: 110px; left: 0; z-index: 2; }
+.latestwork a:nth-child(2) { width: 86px; height: 92px; bottom: 0; left: 53px; z-index: 2; }
+.latestwork a:nth-child(3) { width: 177px; height: 188px; top: 89px; left: 107px; z-index: 1; }
+.latestwork a:nth-child(4) { width: 86px; height: 92px; top: 192px; left: 252px; z-index: 2; }
+.latestwork a:nth-child(5) { width: 125px; height: 133px; top: 2px; left: 252px; z-index: 2; }
+.latestwork a:nth-child(6) { width: 138px; height: 147px; top: 112px; right: 159px; z-index: 3; }
+.latestwork a:nth-child(7) { width: 164px; height: 175px; top: 0; right: 78px; z-index: 2; }
+.latestwork a:nth-child(8) { width: 86px; height: 92px; top: 215px; right: 93px; z-index: 3; }
+.latestwork a:nth-child(9) { width: 115px; height: 123px; top: 87px; right: 0; z-index: 1; }
+
+.seeMore {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 14px 'Helvetica Medium';
+  line-height: 17px;
+  width: 170px; height: 40px;
+  transition: all 0.3s ease;
+  position: relative; z-index: 3;
+  margin: -55px auto 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+.webCard.open .seeMore { opacity: 1; }
+
+.serverCard {
+  background: linear-gradient(45deg, #201e3b 0.00%, #303b62 20.00%, #233d6d 46.37%, #561f63 100.00%);
+  border-radius: 20px;
+  width: calc(50% - 10px); height: calc(50% - 10px);
+  padding: 55px 40px 0;
+  position: absolute; bottom: 0; right: 0; z-index: 1;
+  transition: width 0.3s ease, height 0.3s ease;
+  overflow: hidden;
+  &.open { width: 100%; height: 100%; z-index: 2; }
+  &::after {
+    content: '';
+    background: url("../../img/infodecor1.png") center / cover no-repeat;
+    position: absolute;
+    bottom: -52px ; right: 0;
+    z-index: 2;
+    width: 269px; height: 172px;
+  }
+}
+
+.serverCard > div:first-child p:first-child { max-width: 513px; }
+.serverCard.open > div:first-child p:last-child { position: absolute; left: 215px; top: 100px; }
+
+.serverTypes {
+  display: flex;
+  gap: 20px;
+  width: 100%; max-width: 1125px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 4;
+  opacity: 0; visibility: hidden;
+  > div { width: calc(50% - 10px); }
+}
+
+.serverCard.open .serverTypes { opacity: 1; visibility: visible; }
+
+.type {
+  color: white;
+  text-align: center;
+  font: 20px 'Helvetica Bold';
+  line-height: 20px;
+  margin-bottom: 23px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  > div { width: calc(50% - 10px); }
 }

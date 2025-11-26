@@ -3,6 +3,7 @@ import styles from './infopreview.module.css';
 import DomainInfo from './DomainInfo';
 import HostingInfo from './HostingInfo';
 import WebInfo from './WebInfo';
+import ServerInfo from './ServerInfo';
 
 export default function InfoPreview() {
   return (
@@ -11,6 +12,7 @@ export default function InfoPreview() {
         <DomainInfo />
         <HostingInfo />
         <WebInfo />
+        <ServerInfo />
       </div>
     </section>
   );
