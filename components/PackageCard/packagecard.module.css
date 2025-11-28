@@ -26,7 +26,17 @@
   }
 }
 
-.card:hover { height: 570px; }
+.card::after, .card::before {
+  content: '';
+  background: url("../../img/dot.svg") center / cover no-repeat;
+  position: absolute;
+  top: 16px;
+  width: 6px; height: 6px;
+}
+.card::after { left: 12px; }
+.card::before { right: 12px; }
+
+.card:hover { height: 580px; }
 .card1:hover { height: 650px; }
 
 .tag { 
