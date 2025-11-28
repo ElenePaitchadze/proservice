@@ -24,6 +24,7 @@ export const ProductMenu = [
                 desc: 'დომენური სახელების რეგისტრაცია',
                 img: menu1,
                 href: '',
+                soon: false,
             },
             {
                 name: 'ჰოსტინგი',
@@ -31,6 +32,7 @@ export const ProductMenu = [
                 desc: 'ონლაინ პროექტის განთავსება რამდენიმე Click-ით',
                 img: menu2,
                 href: '',
+                soon: false,
             },
             {
                 name: 'Wordpress',
@@ -38,6 +40,7 @@ export const ProductMenu = [
                 desc: 'Wordpress გვერდის განთავსება',
                 img: menu3,
                 href: '',
+                soon: false,
             },
             {
                 name: 'Node.js',
@@ -45,6 +48,7 @@ export const ProductMenu = [
                 desc: 'ინტერაქტიული, დინამიური საიტი',
                 img: menu4,
                 href: '',
+                soon: false,
             },
             {
                 name: 'SSL სერთიფიკატები',
@@ -52,6 +56,7 @@ export const ProductMenu = [
                 desc: 'ვებგვერდის ტრაფიკის დასაცავი სანდო სერთიფიკატები',
                 img: menu5,
                 href: '',
+                soon: false,
             },
             {
                 name: 'DNS მენეჯმენტი',
@@ -59,6 +64,7 @@ export const ProductMenu = [
                 desc: 'DNS ჩანაწერების მართვა',
                 img: menu6,
                 href: '',
+                soon: false,
             },
             {
                 name: 'Cloud სერვერი',
@@ -66,6 +72,7 @@ export const ProductMenu = [
                 desc: 'გარანტირებული რესურსები ქლაუდში',
                 img: menu7,
                 href: '',
+                soon: false,
             },
         ],
         interestingLinks: [
@@ -75,6 +82,7 @@ export const ProductMenu = [
                 desc: 'გადმოიტანე დომენი დაცულ დატა ცენტრში',
                 img: menu8,
                 href: '',
+                soon: false,
             },
             {
                 name: 'დომენის წესები & ხელშეკრულება',
@@ -82,6 +90,7 @@ export const ProductMenu = [
                 desc: 'წესები და ხელშეკრულებები',
                 img: menu9,
                 href: '',
+                soon: false,
             },
             {
                 name: 'რატომ დომენი ჩვენთან?',
@@ -89,6 +98,7 @@ export const ProductMenu = [
                 desc: 'დაცული საერთაშორისო სტანდარტები',
                 img: menu1,
                 href: '',
+                soon: false,
             },
             {
                 name: 'პერსონალურ მონაცემთა დაცვის პოლიტიკა',
@@ -96,6 +106,7 @@ export const ProductMenu = [
                 desc: '',
                 img: menu10,
                 href: '',
+                soon: false,
             },
         ]
     },
@@ -111,6 +122,7 @@ export const ProductMenu = [
                 desc: 'Linux/Windows სერვერი SSD-ზე',
                 img: menu11,
                 href: '',
+                soon: false,
             },
             {
                 name: 'VPS Lite',
@@ -118,6 +130,7 @@ export const ProductMenu = [
                 desc: 'ბიუჯეტური Linux/Windows სერვერი HDD-ზე',
                 img: menu12,
                 href: '',
+                soon: false,
             },
             {
                 name: 'აპლიკაცია როგორც სერვისი',
@@ -125,6 +138,7 @@ export const ProductMenu = [
                 desc: 'Docker სისტემაზე დაფუძნებული სერვისი',
                 img: menu13,
                 href: '',
+                soon: false,
             },
             {
                 name: 'მარტივი გამოყოფილი სივრცე',
@@ -132,6 +146,7 @@ export const ProductMenu = [
                 desc: 'სივრცე ნებისმიერი ამოცანისთვის',
                 img: menu14,
                 href: '',
+                soon: false,
             },
             {
                 name: 'Kubernetes',
@@ -139,6 +154,7 @@ export const ProductMenu = [
                 desc: 'კონტეინერული აპლიკაციების დანერგვა',
                 img: menu15,
                 href: '',
+                soon: true,
             },
             {
                 name: 'საჯარო Cloud',
@@ -146,6 +162,7 @@ export const ProductMenu = [
                 desc: 'პროექტი მაღალი წარმადობის Cloud ინფრასტრუქტურაში',
                 img: menu16,
                 href: '',
+                soon: true,
             },
         ],
         interestingLinks: [
@@ -155,6 +172,7 @@ export const ProductMenu = [
                 desc: 'შენი სერვერი ჩვენს დატა ცენტრში',
                 img: menu17,
                 href: '',
+                soon: false,
             },
             {
                 name: 'გამოყოფილი სერვერები',
@@ -162,6 +180,7 @@ export const ProductMenu = [
                 desc: 'მაღალი წარმადობის რესურსები',
                 img: menu18,
                 href: '',
+                soon: false,
             },
             {
                 name: 'Backup სერვისი',
@@ -169,6 +188,7 @@ export const ProductMenu = [
                 desc: 'სარეზერვო ასლების სამართავი სივრცე',
                 img: menu19,
                 href: '',
+                soon: false,
             },
             {
                 name: 'NAS',
@@ -176,6 +196,7 @@ export const ProductMenu = [
                 desc: 'ნასი ჩვენ დატა ცენტრში',
                 img: menu20,
                 href: '',
+                soon: false,
             },
         ]
     },
@@ -208,6 +229,7 @@ export interface IMenuLinks {
     desc: string,
     img: StaticImageData,
     href: string
+    soon: boolean
 }
 
 export interface IProdMenu {

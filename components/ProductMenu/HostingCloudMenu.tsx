@@ -29,7 +29,7 @@ export default function HostingCloudMenu({ data }: { data: IProdMenu }) {
               {data.mainLinks.map((link, i) => (
                 <MenuLink key={i} i={i} img={link.img} 
                   name={link.name} name_en={link.name_en}
-                  desc={link.desc} href={link.href} />
+                  desc={link.desc} href={link.href} soon={link.soon} />
               ))}
             </div>
           </>
@@ -50,7 +50,7 @@ export default function HostingCloudMenu({ data }: { data: IProdMenu }) {
                 {data.mainLinks.map((link, i) => (
                   <MenuLink key={i} i={i} img={link.img} 
                     name={link.name} name_en={link.name_en}
-                    desc={link.desc} href={link.href} />
+                    desc={link.desc} href={link.href} soon={link.soon} />
                 ))}
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function HostingCloudMenu({ data }: { data: IProdMenu }) {
           {data.interestingLinks!.map((link, i) => (
             <MenuLink key={i} i={i} img={link.img} 
               name={link.name} name_en={link.name_en}
-              desc={link.desc} href={link.href} />
+              desc={link.desc} href={link.href} soon={link.soon} />
           ))}
         </div>
       </div>

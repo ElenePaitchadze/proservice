@@ -55,7 +55,7 @@
     &:first-child { border-radius: 5px 0 0 5px; }
   }
   span:first-child {
-    font: 14px 'Helvetica Medium';
+    font: 14px 'Campton Medium', 'Helvetica Medium';
     line-height: 17px;
   }
   span:last-child {
@@ -78,7 +78,6 @@
   padding: 16.5px 10px 16.5px 27px;
   min-width: 213px;
   transition: all 0.3s ease;
-  -webkit-text-stroke: 0.5px black;
   img { filter: brightness(0) invert(0);}
   &:hover { gap: 15px; }
 }
