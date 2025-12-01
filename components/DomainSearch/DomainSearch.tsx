@@ -62,9 +62,7 @@ export default function DomainSearch() {
           className={styles.search} />
         <span>www.</span>
       </div>
-      <div className={`${styles.extensions} ${dropdownOpen ? styles.active : ""} 
-        ${selectedExt === ".com.ge" ? styles.littleFont : ""}`}
-        onClick={() => setDropdownOpen((prev) => !(prev))}>
+      <div className={`${styles.extensions} ${selectedExt === ".com.ge" ? styles.littleFont : ""}`}>
         <div>{selectedExt}</div>
         <ul>
           {[".ge", ".com", ".net", ".org", ".com.ge"].map((ext) => (

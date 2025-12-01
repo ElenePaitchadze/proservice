@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
 import styles from './infopreview.module.css';
-import { packagesData } from '../Packages/packagesData';
+import { packagesData, pluginData } from '../Packages/packagesData';
 import PackageCard from '../PackageCard/PackageCard';
+import ModuleCard from '../ModuleCard/ModuleCard';
 
 import directadmin from '@/img/icons/directAdmin.png';
 import cpanel from '@/img/icons/cpanel.png';
@@ -36,15 +37,25 @@ export default function HostingInfo() {
           <span>Wordpress</span>
           <img src={wordpress.src} alt="icon" />
         </button>
-        <a href="" target='_blank'>
+        <button onClick={() => setSelected('Plugins')} className={selected === 'Plugins' ? styles.active : ''}>
           <span>Plugins</span>
           <img src={plugins.src} alt="icon" />
-        </a>
+        </button>
       </div>
       <div className={styles.packages}>
-        {currentCategory?.children.slice(0, 4).map((child) => (
-          <PackageCard key={child.id} data={child} category={'info'} />
-        ))}
+        {selected === 'Plugins' ? (
+          <div className={styles.modules}>
+            {pluginData?.children.map((child) => (
+              <ModuleCard key={child.id} 
+              title1={child.title1} title2={child.title2} 
+              img={child.img} href={child.href} card1={true} />
+            ))}
+          </div>
+        ) : (
+          currentCategory?.children.slice(0, 4).map((child) => (
+            <PackageCard key={child.id} data={child} category="info" />
+          ))
+        )}
       </div>
       <button
         className={styles.toggleBtn}

@@ -1,5 +1,6 @@
 import styles from './servercard.module.css';
 import { Link } from '@/i18n/navigation';
+import dot from '@/img/dot.svg';
 
 export default function ServerCard({ data }: { data: any }) {
 	return (
@@ -15,6 +16,8 @@ export default function ServerCard({ data }: { data: any }) {
         ))}
       </div>
       <Link href={data.href}>შეკვეთა</Link>
+      <img src={dot.src} alt="dot" />
+      <img src={dot.src} alt="dot" />
 		</div>
 	);
 }

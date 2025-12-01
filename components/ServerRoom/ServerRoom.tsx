@@ -46,11 +46,7 @@ export default function ServerRoom() {
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggle = (index: number) => {
-    if (openIndex === index) {
-      setOpenIndex(-1);
-    } else {
-      setOpenIndex(index);
-    }
+    setOpenIndex(index);
   };
 
   const leftRef = useRef<HTMLDivElement>(null);

@@ -95,7 +95,7 @@ header {
     width: 12px;
     left: 4px;
     bottom: 3px;
-    background: var(--primary-color);
+    background: linear-gradient(180deg, #29a7ff 0.00%, #128aff 100.00%);
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }

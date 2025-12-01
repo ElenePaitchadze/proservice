@@ -40,7 +40,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <Header params={params} />
+          <Header />
           {children}
           <Features />
           <Footer />

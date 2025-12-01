@@ -7,6 +7,10 @@ import icon6 from '@/img/icons/icon6.png';
 import icon7 from '@/img/icons/icon7.png';
 import icon8 from '@/img/icons/icon8.png';
 import warning from '@/img/warning.svg';
+import bank1 from '@/img/bank1.png';
+import bank2 from '@/img/bank2.png';
+import bank3 from '@/img/bank3.svg';
+import bank4 from '@/img/bank4.svg';
 
 export const packagesData = [
   {
@@ -209,7 +213,7 @@ export const packagesData = [
       },
     ]
   },
-    {
+  {
     id: '203',
     name: 'Wordpress',
     children: [
@@ -310,3 +314,13 @@ export const packagesData = [
     ]
   },
 ];
+
+export const pluginData = 
+  { name: 'Plugins',
+    children: [
+      { id: 1, title1: "ბარათით", title2: "გადახდა", href: '', img: bank1 },
+      { id: 2, title1: "განვადება", title2: '', href: '', img: bank2 },
+      { id: 3, title1: "მარკეტინგის", title2: "ფლაგინები", href: '', img: bank3 },
+      { id: 4, title1: "ტრანსპორტირება", title2: "", href: '', img: bank4 },
+    ]
+  };

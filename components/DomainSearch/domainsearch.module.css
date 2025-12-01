@@ -32,7 +32,7 @@
 }
 
 .form button {
-  background: var(--primary-color);
+  background: linear-gradient(180deg, #29a7ff 0.00%, #128aff 100.00%);
   border: none;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -41,7 +41,7 @@
   font: 14px 'BPG Mrgvlovani';
   line-height: 19px; height: 40px;
   transition: all 0.3s ease;
-  &:hover { background: var(--hover-color); }
+  &:hover { background: linear-gradient(180deg, #27A5FF 0.00%, #107DF1 100.00%); }
 }
 
 .extensions {
@@ -63,9 +63,10 @@
 }
 
 .extensions ul {
-  background: var(--primary-color);
+  background: linear-gradient(to bottom, transparent 21px, var(--primary-color) 21px);;
   border-radius: 0 0 5px 5px;
   color: white;
+  cursor: pointer;
   list-style: none;
   display: none;
   align-items: center;
@@ -73,10 +74,9 @@
   font: 14px 'BPG LE Studio 02 Caps';
   line-height: 19px;
   gap: 20px;
-  padding: 20px 0;
-  margin: 0; left: -20px;
-  width: 90px; position: absolute;
-  li { cursor: pointer; }
+  padding: 39px 0 18px;
+  margin: 0; left: -20px; top: 30px;
+  width: 90px; position: absolute; 
 }
 
-.extensions.active ul { display: flex; }
+.extensions:hover ul { display: flex; }
