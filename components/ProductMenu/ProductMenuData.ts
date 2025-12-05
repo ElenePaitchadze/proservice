@@ -23,7 +23,7 @@ export const ProductMenu = [
                 name_en: 'დომენის რეგისტრაცია',
                 desc: 'დომენური სახელების რეგისტრაცია',
                 img: menu1,
-                href: '',
+                href: 'https://billing.proservice.ge/cart.php?a=add&domain=register',
                 soon: false,
             },
             {
@@ -31,7 +31,7 @@ export const ProductMenu = [
                 name_en: 'ჰოსტინგი',
                 desc: 'ონლაინ პროექტის განთავსება რამდენიმე Click-ით',
                 img: menu2,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/shared-hosting',
                 soon: false,
             },
             {
@@ -39,7 +39,7 @@ export const ProductMenu = [
                 name_en: 'Wordpress',
                 desc: 'Wordpress გვერდის განთავსება',
                 img: menu3,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/wordpress-hosting',
                 soon: false,
             },
             {
@@ -55,7 +55,7 @@ export const ProductMenu = [
                 name_en: 'SSL სერთიფიკატები',
                 desc: 'ვებგვერდის ტრაფიკის დასაცავი სანდო სერთიფიკატები',
                 img: menu5,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/ssl-certificate',
                 soon: false,
             },
             {
@@ -63,7 +63,7 @@ export const ProductMenu = [
                 name_en: 'DNS მენეჯმენტი',
                 desc: 'DNS ჩანაწერების მართვა',
                 img: menu6,
-                href: '',
+                href: 'https://billing.proservice.ge/cart.php?a=add&pid=47',
                 soon: false,
             },
             {
@@ -71,7 +71,7 @@ export const ProductMenu = [
                 name_en: 'Cloud სერვერი',
                 desc: 'გარანტირებული რესურსები ქლაუდში',
                 img: menu7,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/dedicated-servers',
                 soon: false,
             },
         ],
@@ -81,7 +81,7 @@ export const ProductMenu = [
                 name_en: 'დომენის ტრანსფერი',
                 desc: 'გადმოიტანე დომენი დაცულ დატა ცენტრში',
                 img: menu8,
-                href: '',
+                href: 'https://billing.proservice.ge/cart.php?a=add&domain=transfer',
                 soon: false,
             },
             {
@@ -89,7 +89,7 @@ export const ProductMenu = [
                 name_en: 'დომენის წესები & ხელშეკრულება',
                 desc: 'წესები და ხელშეკრულებები',
                 img: menu9,
-                href: '',
+                href: 'https://proservice.ge/uploads/xelshekrulebebi/xelshekruleba_domeni.pdf',
                 soon: false,
             },
             {
@@ -97,7 +97,7 @@ export const ProductMenu = [
                 name_en: 'რატომ დომენი ჩვენთან?',
                 desc: 'დაცული საერთაშორისო სტანდარტები',
                 img: menu1,
-                href: '',
+                href: 'https://proservice.ge/uploads/conetnts/domain_regulation_amendments.geo.2020.01.10_v3.0.pdf',
                 soon: false,
             },
             {
@@ -105,7 +105,7 @@ export const ProductMenu = [
                 name_en: 'პერსონალურ მონაცემთა დაცვის პოლიტიკა',
                 desc: '',
                 img: menu10,
-                href: '',
+                href: 'https://proservice.ge/uploads/new_files/privacy__policy_2020_geo.pdf',
                 soon: false,
             },
         ]
@@ -121,7 +121,7 @@ export const ProductMenu = [
                 name_en: 'VPS Cloud',
                 desc: 'Linux/Windows სერვერი SSD-ზე',
                 img: menu11,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/virtual-ds',
                 soon: false,
             },
             {
@@ -129,7 +129,7 @@ export const ProductMenu = [
                 name_en: 'VPS Lite',
                 desc: 'ბიუჯეტური Linux/Windows სერვერი HDD-ზე',
                 img: menu12,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/virtual-ds',
                 soon: false,
             },
             {
@@ -171,7 +171,7 @@ export const ProductMenu = [
                 name_en: 'კოლოკაცია',
                 desc: 'შენი სერვერი ჩვენს დატა ცენტრში',
                 img: menu17,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/colocation',
                 soon: false,
             },
             {
@@ -179,7 +179,7 @@ export const ProductMenu = [
                 name_en: 'გამოყოფილი სერვერები',
                 desc: 'მაღალი წარმადობის რესურსები',
                 img: menu18,
-                href: '',
+                href: 'https://billing.proservice.ge/index.php?rp=/store/dedicated-servers',
                 soon: false,
             },
             {

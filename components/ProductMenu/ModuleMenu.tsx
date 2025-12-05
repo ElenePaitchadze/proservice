@@ -14,10 +14,10 @@ export default function ModuleMenu({ data }: { data: IProdMenu }) {
 
   return (
     <div className={styles.modules}>
-      <ModuleCard title1="ბარათით" title2="გადახდა" img={bank1} href='/.' card1={false} />
-      <ModuleCard title1="განვადება" title2="" img={bank2} href='/.' card1={false} />
-      <ModuleCard title1="მარკეტინგის" title2="ფლაგინები" img={bank3} href='/.' card1={false} />
-      <ModuleCard title1="ტრანსპორტირება" title2="" img={bank4} href='/.' card1={false} />
+      <ModuleCard title1="ბარათით" title2="გადახდა" img={bank1} href='https://billing.proservice.ge/cart.php?a=confproduct&i=1' card1={false} />
+      <ModuleCard title1="განვადება" title2="" img={bank2} href='https://billing.proservice.ge/cart.php?a=confproduct&i=2' card1={false} />
+      <ModuleCard title1="მარკეტინგის" title2="ფლაგინები" img={bank3} href='https://billing.proservice.ge/cart.php?a=confproduct&i=3' card1={false} />
+      <ModuleCard title1="ტრანსპორტირება" title2="" img={bank4} href='https://billing.proservice.ge/cart.php?a=confproduct&i=4' card1={false} />
     </div>
   );
 }

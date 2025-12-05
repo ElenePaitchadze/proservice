@@ -1,12 +1,11 @@
 import { StaticImageData } from 'next/image';
-import { Link } from '@/i18n/navigation';
 import styles from './modulecard.module.css';
 
 export default function ModuleCard({ title1, title2, img, href, card1 }: 
   { title1: string, title2: string, img: StaticImageData, href: string, card1: boolean }) {
 
   return (
-    <Link href={href} className={`${styles.card} ${card1 ? styles.card1 : ''}`}>
+    <a href={href} className={`${styles.card} ${card1 ? styles.card1 : ''}`} target='_blank'>
       <div className={styles.titles}>
         <p>{title1}</p>
         <p>{title2}</p>
@@ -20,6 +19,6 @@ export default function ModuleCard({ title1, title2, img, href, card1 }:
           <path d="M20,12H4m16,0L16,8m4,4-4,4" transform="translate(-3.25 -6.939)" />
         </svg>
       </div>
-    </Link>
+    </a>
   )
 }

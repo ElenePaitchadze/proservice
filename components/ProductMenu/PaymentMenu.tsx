@@ -10,15 +10,15 @@ export default function PaymentMenu({ data }: { data: IProdMenu }) {
 
   return (
     <div className={styles.productMenu}>
-      <Link href={'/'}>
+      <a href='https://billing.proservice.ge/clientarea.php?action=invoices' target="_blank">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
             <path d="M15,8a1,1,0,0,1-1,1H6A1,1,0,0,1,6,7h8A1,1,0,0,1,15,8Zm-1,3H6a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2Zm-4,4H6a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Zm13-3v8a3,3,0,0,1-3,3H4a3,3,0,0,1-3-3V4A3,3,0,0,1,4,1H16a3,3,0,0,1,3,3v7h3A1,1,0,0,1,23,12ZM17,4a1,1,0,0,0-1-1H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H17Zm4,9H19v8h1a1,1,0,0,0,1-1Z" transform="translate(-1 -1)" />
           </svg>
         </div>
         <span>ინვოისები</span>
-      </Link>
-      <Link href={'/'}>
+      </a>
+      <a href='https://billing.proservice.ge/clientarea.php?action=addfunds' target="_blank">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="22.603" height="19.374" viewBox="0 0 22.603 19.374">
             <g transform="translate(-64 -128)">
@@ -29,8 +29,8 @@ export default function PaymentMenu({ data }: { data: IProdMenu }) {
           </svg>
         </div>
         <span>ანგარიშის შევსება</span>
-      </Link>
-      <Link href={'/'}>
+      </a>
+      <a href='' target="_blank">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="18.369" height="20.04" viewBox="0 0 18.369 20.04">
             <g transform="translate(-109.74 -73.06)">
@@ -41,8 +41,8 @@ export default function PaymentMenu({ data }: { data: IProdMenu }) {
           </svg>
         </div>
         <span>ხელშეკრულება</span>
-      </Link>
-      <Link href={'/'}>
+      </a>
+      <a href='' target="_blank">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="13.73" height="21.13" viewBox="0 0 13.73 21.13">
             <g transform="translate(-84.359)">
@@ -55,7 +55,7 @@ export default function PaymentMenu({ data }: { data: IProdMenu }) {
           </svg>
         </div>
         <span>ანგარიშსწორება</span>
-      </Link>
+      </a>
     </div>
   );
 }
