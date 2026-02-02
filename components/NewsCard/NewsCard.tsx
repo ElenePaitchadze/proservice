@@ -6,7 +6,7 @@ import arrow from '@/img/arrowright.png';
 
 export default function NewsCard({ news }: { news: any }) {
   return (
-    <Link href={`/${news.slug}`} className={styles.card}>
+    <Link href={`/news/${news.slug}`} className={styles.card}>
       <div className={styles.cardImg}>
         <img src={news.img.src} alt="news image" />
       </div>

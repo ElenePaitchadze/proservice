@@ -14,7 +14,7 @@ const aboutUsMenu = [
     img: menuicon1,
     children: {
       1: { name: 'კომპანიის ისტორია', href: '/' },
-      2: { name: 'სიახლეები', href: '/' },
+      2: { name: 'სიახლეები', href: '/news' },
       3: { name: 'ღონისძიებები', href: '/' },
       4: { name: 'ბლოგი', href: '/' },
     }
@@ -88,7 +88,7 @@ export default function Header() {
         <div className={styles.headerActions}>
           <a href="tel: +995 32 2 43 00 44">+995 32 2 43 00 44</a>
           <LanguageSwitcher />
-          <Link href='/login' className={styles.login}>{t('login')}</Link>
+          <a href='https://dev.proservice.ge/hosting/login.html' className={styles.login}>{t('login')}</a>
         </div>
       </div>
     </header>

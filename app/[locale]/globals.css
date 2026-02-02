@@ -144,8 +144,8 @@ footer {
   color: #787878;
   display: flex;
   align-items: center;
-  gap: 5px;
-  font: 14px 'Helvetica Roman';
+  gap: 8px;
+  font: 14px 'Campton Medium', 'Helvetica Roman';
   line-height: 17px;
 }
 
@@ -193,3 +193,50 @@ footer {
 .portfolioSwiper .swiper-slide:nth-child(3n) > a:first-child { background: url('../../img/swiperbg3.png') no-repeat center/cover; }
 .portfolioSwiper .swiper-slide:nth-child(3n) > a:first-child::after { background: #D1D1D1; }
 .portfolioSwiper .swiper-slide:nth-child(3n) > a:first-child:hover::after { background: rgba(209,209,209,0.68); }
+
+.noDetailsFound {
+  color: var(--primary-color);
+  font: 20px 'BPG Mrgvlovani Caps 2010';
+  line-height: 24px;
+  text-align: center;
+}
+
+.news-cont { 
+  padding: 30px 20px; 
+  .content {
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  > span {
+    color: #2B2B2B;
+    font: 12px 'Campton Light', 'Helvetica Roman';
+    line-height: 16px;
+  }
+}
+
+.share > div {
+  display: flex;
+  gap: 10px;
+  > * {
+    background: #F2F2F2 !important;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; height: 35px;
+    transition: all 0.3s ease;
+    &:hover {
+      background: var(--primary-color) !important;
+      img { filter: brightness(0) invert(1); }
+    }
+  }
+  img { transition: all 0.3s ease; }
+}

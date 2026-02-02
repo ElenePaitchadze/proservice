@@ -8,5 +8,10 @@
     "address": "3, P. Kavtaradze Dead-end",
     "records": "Our NS Records",
     "rights": "All Rights Reserved."
+  },
+  "news": {
+    "news": "News",
+    "incidents": "Incidents",
+    "informationNotFound": "Information Not Found"
   }
 }
