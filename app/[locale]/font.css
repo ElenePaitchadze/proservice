@@ -100,3 +100,11 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: "Poppins Italic";
+    src: url("../../fonts/Poppins-SemiBoldItalic.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

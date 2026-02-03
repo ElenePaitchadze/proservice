@@ -1,0 +1,39 @@
+.designpage {
+  > p:nth-child(2) {
+    color: black;
+    font: 16px 'Campton Medium', 'Helvetica Medium';
+    line-height: 20px;
+    margin-bottom: 30px;
+  }
+  > p:last-child {
+    color: black;
+    text-align: center;
+    font: 26px 'Campton Medium', 'Helvetica Medium';
+    line-height: 31px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 75px;
+  > div {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 24px 30px 24px 39px;
+    &:last-child { grid-column: span 2; }
+  }
+  p:first-child {
+    color: var(--primary-color);
+    font: 18px 'Campton Medium', 'Helvetica Medium';
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+  p:last-child {
+    color: #4E4E4E;
+    font: 16px 'Campton Light', 'Helvetica Roman';
+    line-height: 20px;
+  }
+}

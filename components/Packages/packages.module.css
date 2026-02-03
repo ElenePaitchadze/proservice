@@ -30,12 +30,24 @@
   font: 16px 'Campton Medium';
   line-height: 21px;
   width: 155px; height: 50px;
+  position: relative;
   transition: all 0.3s ease;
   &:hover { background: #D5EEFF; }
   &.active { 
-    background: var(--primary-color); color: white; 
+    color: white; 
     img { filter: brightness(0) invert(1); }
+    &::after { opacity: 1; }
   }
+  &::after {
+    content: '';
+    background: linear-gradient(#29a7ff 0%, #128aff 100%);
+    border-radius: 10px;
+    position: absolute;
+    inset: 0; opacity: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  > * { position: relative; z-index: 2; }
 }
 .packagesHead > a { width: 130px; }
 

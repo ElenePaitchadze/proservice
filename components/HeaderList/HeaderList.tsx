@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import styles from './headerlist.module.css';
-import img from '@/img/menuIcon1.jpg';
+import img from '@/img/menuIcon2.jpg';
 
 const headerItems = [
   { name: 'ჰოსტინგი', img: img },

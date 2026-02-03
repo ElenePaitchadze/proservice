@@ -4,7 +4,7 @@ import styles from './portfoliocard.module.css';
 import { useRef } from 'react';
 import Link from 'next/link';
 
-export default function Portfolio(
+export default function PortfolioCard(
   { img, logo, href }: 
   { img: StaticImageData, logo: StaticImageData, href: string }) 
 {

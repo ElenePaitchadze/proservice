@@ -3,7 +3,8 @@ import logo from '@/img/logo.svg';
 import styles from './header.module.css';
 import { Link } from '@/i18n/navigation';
 import LanguageSwitcher from '../LanguageSwitcher';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import menuicon1 from '@/img/menuIcon1.jpg';
 import menuicon2 from '@/img/menuIcon2.jpg';
@@ -13,7 +14,7 @@ const aboutUsMenu = [
   { name: 'Proservice-ს შესახებ',
     img: menuicon1,
     children: {
-      1: { name: 'კომპანიის ისტორია', href: '/' },
+      1: { name: 'კომპანიის ისტორია', href: '/about-us' },
       2: { name: 'სიახლეები', href: '/news' },
       3: { name: 'ღონისძიებები', href: '/' },
       4: { name: 'ბლოგი', href: '/' },
@@ -30,13 +31,17 @@ const aboutUsMenu = [
 ];
 
 export default function Header() {
-  // const locale = useLocale();      
   const t = useTranslations('HomePage');
   const [openMenu, setOpenMenu] = useState<"products" | "about" | null>(null);
+  const pathname = usePathname();
 
   const toggleMenu = (menu: "products" | "about") => {
     setOpenMenu(prev => (prev === menu ? null : menu));
   };
+
+  useEffect(() => {
+    setOpenMenu(null);
+  }, [pathname]);
 
   return (
     <header className="Container">

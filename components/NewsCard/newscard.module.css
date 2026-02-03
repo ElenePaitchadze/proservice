@@ -8,7 +8,10 @@
   transition: all 0.3s ease;
   position: relative;
   top: 0;
-  &:hover { top: -7px; }
+  &:hover { 
+    top: -7px; 
+    .desc > p:first-child { color: var(--primary-color); }
+  }
 }
 
 .cardImg {
@@ -41,6 +44,7 @@
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+    transition: all 0.3s ease;
   }
   div:nth-child(2) {
     color: #787878;

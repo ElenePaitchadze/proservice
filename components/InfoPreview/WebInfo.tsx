@@ -43,7 +43,7 @@ export default function WebInfo() {
         <a href="" target='_blank'><img src={art8.src} alt="site img" /></a>
         <a href="" target='_blank'><img src={art9.src} alt="site img" /></a>
       </div>
-      <Link href={'/'} className={styles.seeMore}>მეტის ნახვა</Link>
+      <Link href={'/web-design'} className={styles.seeMore}>მეტის ნახვა</Link>
       <button
         className={styles.toggleBtn}
         onClick={() => setIsOpen(prev => !prev)} >
