@@ -8,7 +8,7 @@ export default function BannerTwo() {
       <div className={styles.secondText}>
         <p><span>შენი ბერენდის სახე</span><span>ციფრული სამყაროში!</span></p>
         <p>უნიკალური დიზაინი, დახვეწილი სტილი და ტექნიკური სიზუსტე ერთ სივრცეში.</p>
-        <Link href={'/'}>ნამუშევრები</Link>
+        <Link href={'/web-design'}>ნამუშევრები</Link>
       </div>
       <img src={img.src} alt="img" />
     </div>

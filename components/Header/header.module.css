@@ -33,7 +33,7 @@
 
 .login {
   background: linear-gradient(180deg, #29a7ff 0.00%, #128aff 100.00%);
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
   color: white;
   text-decoration: none;
@@ -131,4 +131,94 @@
       &:hover { color: var(--primary-color); }
     }
   }
+}
+
+.menuToggle { display: none; }
+.findProduct {
+  background: #F2F2F2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  input {
+    background: transparent;
+    border: none;
+    color: #757575;
+    font: 12px 'BPG Mrgvlovani';
+    line-height: 16px;
+    padding-left: 40px;
+    width: calc(100% - 50px); height: 50px;
+    &:focus { outline: none; }
+  }
+  button {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50px; height: 50px;
+  }
+}
+
+.mobRegister {
+  background: var(--primary-color);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 14px 'BPG Mrgvlovani';
+  line-height: 19px;
+  width: calc(100% - 40px); height: 40px;
+  margin: 20px auto 0;
+}
+
+.mobActions {
+  margin-top: auto;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.warningLink {
+  background: var(--primary-color);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font: 10px 'BPG Mrgvlovani';
+  line-height: 13px;
+  height: 40px;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+  width: calc(100% - 40px);
+  margin: 0 auto 30px;
+  &:hover { background: #0C82FF; }
+}
+
+@media screen and (max-width: 1230px) {
+  .headerActions { 
+    gap: 30px; 
+    &::before { right: 120px; }
+    &::after { left: 160px; }
+  }
+
+  .prodMenu { left: -180px; }
+}
+
+@media screen and (max-width: 1023px) {
+  .menu { display: none; }
+  .headerActions {
+    margin-left: 0;
+    > a { display: none; }
+    &::before, &::after { content: none; }
+  }
+  .menuToggle { display: flex; }
 }

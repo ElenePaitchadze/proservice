@@ -1,0 +1,15 @@
+.contentCont {
+  background: #F9FAFB; 
+  padding: 50px 20px 110px; 
+}
+
+.contentText {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  color: #2E2E2E;
+  font: 14px 'BPG Mrgvlovani';
+  line-height: 19px;
+  padding: 30px 40px 70px;
+  * { font-family: "BPG Mrgvlovani" !important; }
+}

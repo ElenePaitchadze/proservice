@@ -16,6 +16,7 @@ export default function HostingCloudMenu({ data }: { data: IProdMenu }) {
       <div className={`${styles.topSide} ${data.cat_id == '1128' ? styles.active : ''}`}>
         {data.cat_id == '1127' && 
           <>
+            <p className={styles.mobTitle}>დომენები & ჰოსტინგი</p>
             <div className={styles.offer}>
               <span>მოძებნე შენზე მორგებული გადაწყვეტილება</span>
               <Link href='/'>

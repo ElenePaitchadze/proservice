@@ -4,12 +4,19 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link } from "@/i18n/navigation";
 import styles from './productMenu.module.css';
 
+type Props = {
+  data: IProdMenu;
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+ 
 export default function PaymentMenu({ data }: { data: IProdMenu }) {
   const locale = useLocale();      
   const t = useTranslations('HomePage');
 
   return (
     <div className={styles.productMenu}>
+      <p>გადახდები</p>
       <a href='https://billing.proservice.ge/clientarea.php?action=invoices' target="_blank">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">

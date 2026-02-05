@@ -18,42 +18,45 @@ export default function ServiceMenu({ data }: { data: IProdMenu }) {
 
   return (
     <div className={styles.servicegrid}>
-      <div id={styles.service1}>
-        <p><span>ვებ</span><span>დიზაინი</span></p>
-        <img src={topIcon.src} alt="icon" />
-        <img src={firstMenuImg.src} alt="image" />
-        <img src={bottomIcon.src} alt="icon" />
-      </div>
-      <div id={styles.service2}>
-        <p>IT მომსახურება</p>
-        <span>B2B კომპიუტერული მომსახურების სერვისი</span>
-        <div>
-          <img src={secondMenuImg.src} alt="image" />
-          <span>ITSERVICE.GE</span>
+      <p>სერვისები</p>
+      <div>
+        <div id={styles.service1}>
+          <p><span>ვებ</span><span>დიზაინი</span></p>
+          <img src={topIcon.src} alt="icon" />
+          <img src={firstMenuImg.src} alt="image" />
+          <img src={bottomIcon.src} alt="icon" />
         </div>
-      </div>
-      <div id={styles.service3}>
-        <p>საიტის შემქმნელი</p>
-        <img src={thirdMenuImg.src} alt="image" />
-      </div>
-      <div id={styles.service4}>
-        <p>მოგვანდე</p>
-        <div className={styles.typeWrap}>
-          <div className={styles.typeTarget}><span>{'{ ვებ'}</span><span>{'გვერდი }'}</span></div>
-          <span>განახლებისთვის!</span>
+        <div id={styles.service2}>
+          <p>IT მომსახურება</p>
+          <span>B2B კომპიუტერული მომსახურების სერვისი</span>
+          <div>
+            <img src={secondMenuImg.src} alt="image" />
+            <span>ITSERVICE.GE</span>
+          </div>
         </div>
-        <img src={fourthMenuImg.src} alt="image" />
-      </div>
-      <div id={styles.service5}>
-        <img src={googleImg.src} alt="img" />
-        <img src={fifthMenuImg.src} alt="img" />
-      </div>
-      <div id={styles.service6}>
-        <p>სასტუმროების</p>
-        <p>მართვის სისტემა</p>
-        <div>
-          <img src={sixthMenuImg.src} alt="image" />
-          <div>HMS</div>
+        <div id={styles.service3}>
+          <p>საიტის შემქმნელი</p>
+          <img src={thirdMenuImg.src} alt="image" />
+        </div>
+        <div id={styles.service4}>
+          <p>მოგვანდე</p>
+          <div className={styles.typeWrap}>
+            <div className={styles.typeTarget}><span>{'{ ვებ'}</span><span>{'გვერდი }'}</span></div>
+            <span>განახლებისთვის!</span>
+          </div>
+          <img src={fourthMenuImg.src} alt="image" />
+        </div>
+        <div id={styles.service5}>
+          <img src={googleImg.src} alt="img" />
+          <img src={fifthMenuImg.src} alt="img" />
+        </div>
+        <div id={styles.service6}>
+          <p>სასტუმროების</p>
+          <p>მართვის სისტემა</p>
+          <div>
+            <img src={sixthMenuImg.src} alt="image" />
+            <div>HMS</div>
+          </div>
         </div>
       </div>
     </div>
