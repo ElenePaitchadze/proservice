@@ -36,7 +36,7 @@ export default function Portfolio({ portfolios }: { portfolios: any }) {
           slidesPerView={'auto'}
           breakpoints={{
             320: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
+            767: { slidesPerView: 2 },
             1024: { slidesPerView: 2 }
           }}
           className="portfolioSwiper"

@@ -13,3 +13,12 @@
   padding: 30px 40px 70px;
   * { font-family: "BPG Mrgvlovani" !important; }
 }
+
+@media screen and (max-width: 767px) {
+  .contentCont { padding: 30px 20px 100px; }
+  .contentText { 
+    font-size: 12px;
+    line-height: 16px;
+    padding: 30px 20px 40px; 
+  }
+}

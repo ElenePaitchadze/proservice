@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './infopreview.module.css';
 import DomainSearch from '../DomainSearch/DomainSearch';
 
@@ -9,6 +9,27 @@ import contractIcon from '@/img/icons/contract.png';
 
 export default function DomainInfo() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 767px)');
+
+    const handleScroll = () => {
+      if (isOpen && media.matches) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
+    };
+
+    handleScroll();
+
+    media.addEventListener('change', handleScroll);
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+      media.removeEventListener('change', handleScroll);
+    };
+  }, [isOpen]);
   
   return (
     <div className={`${styles.domainCard} ${isOpen ? styles.open : ''}`}>

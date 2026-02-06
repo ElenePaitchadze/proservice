@@ -7,6 +7,10 @@ import cpanel from '@/img/icons/cpanel.png';
 import wordpress from '@/img/icons/wordpress.png';
 import plugins from '@/img/icons/plugins.png';
 import PackageCard from '../PackageCard/PackageCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function Packages() {
   const [selected, setSelected] = useState('DirectAdmin');
@@ -41,6 +45,16 @@ export default function Packages() {
             <PackageCard key={child.id} data={child} category={selected} />
           ))}
         </div>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={'auto'}
+          className={styles.packagesSwiper}>
+          {currentCategory?.children.map((child) => (
+            <SwiperSlide key={child.id}>
+              <PackageCard data={child} category={selected} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section> 
   );

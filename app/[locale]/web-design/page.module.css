@@ -37,3 +37,16 @@
     line-height: 20px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .designpage > p:nth-child(2) { margin-bottom: 20px; }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin-bottom: 50px;
+    > div {
+      padding: 24px 32px;
+      &:last-child { grid-column: span 1; }
+    }
+  }
+}

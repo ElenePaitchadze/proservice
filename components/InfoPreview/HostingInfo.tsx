@@ -4,6 +4,10 @@ import styles from './infopreview.module.css';
 import { packagesData, pluginData } from '../Packages/packagesData';
 import PackageCard from '../PackageCard/PackageCard';
 import ModuleCard from '../ModuleCard/ModuleCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import directadmin from '@/img/icons/directAdmin.png';
 import cpanel from '@/img/icons/cpanel.png';
@@ -55,6 +59,33 @@ export default function HostingInfo() {
           currentCategory?.children.slice(0, 4).map((child) => (
             <PackageCard key={child.id} data={child} category="info" />
           ))
+        )}
+      </div>
+      <div className={styles.mobpackages}>
+        {selected == 'Plugins' ? (
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={'auto'}
+            className='moduleSwiper'>
+              {pluginData?.children.map((child) => (
+                <SwiperSlide key={child.id} className='moduleSlide'>
+                  <ModuleCard
+                  title1={child.title1} title2={child.title2} 
+                  img={child.img} href={child.href} card1={false} />
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        ) : (
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={'auto'}
+            className={styles.packageSwiper}>
+              {currentCategory?.children.map((child) => (
+                <SwiperSlide key={child.id}>
+                  <PackageCard data={child} category="info" />
+                </SwiperSlide>
+              ))}
+          </Swiper>
         )}
       </div>
       <button

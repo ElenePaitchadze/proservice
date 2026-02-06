@@ -54,11 +54,11 @@
     padding: 9px 32px;
     &:first-child { border-radius: 5px 0 0 5px; }
   }
-  span:first-child {
+  div > span:first-child {
     font: 14px 'Campton Medium', 'Helvetica Medium';
     line-height: 17px;
   }
-  span:last-child {
+  div > span:last-child {
     color: #979797;
     font: 10px 'Helvetica Roman';
     line-height: 12px;
@@ -137,18 +137,6 @@
   align-items: center;
   gap: 69px;
   padding: 0 120px;
-  /* position: relative; */
-  /* &::after {
-    content: '';
-    backdrop-filter: blur(14px);
-    filter: brightness(1.15) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.07));
-    position: absolute;
-    opacity: 0.82;
-    top: 0; right: 0;
-    width: 100%; height: 80px;
-    z-index: 1;
-    pointer-events: none;
-  } */
 }
 
 .thirdText {
@@ -162,4 +150,92 @@
   span:first-child { font: 30px 'Helvetica Roman'; line-height: 36px; }
   span:last-child { font: 40px 'Helvetica Bold'; line-height: 45px; }
   p:last-child { font: 16px 'Helvetica Roman'; line-height: 20px; margin-bottom: 0; }
+}
+
+@media screen and (max-width: 1023px) {
+  .SecondBanner {
+    padding: 0 20px;
+    > img { max-width: 300px; }
+  }
+
+  .thirdBanner {
+    padding: 0 20px;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .firstBannerCont { padding: 50px 20px 0; }
+}
+
+@media screen and (max-width: 767px) {
+  .bannerSwiper { height: 600px; border-radius: 10px; } 
+  .compare { flex-direction: column; }
+
+  .compare div {
+    border-right: none;
+    border-bottom: 1px solid #E9E9E9;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 7px 20px;
+    &:first-child { border-radius: 5px 5px 0 0; padding-top: 20px; }
+    &:last-of-type { padding-bottom: 10px; }
+    > span span {
+      color: var(--primary-color);
+      font: 16px 'Campton Medium', 'Helvetica Medium';
+      line-height: 20px;
+      margin-right: 3px;
+    }
+  }
+
+  .compareLink {
+    border-radius: 0 0 5px 5px;
+    justify-content: center;
+  }
+  .head > p:nth-child(2) { font-size: 24px; line-height: 26px; }
+
+  .SecondBanner {
+    padding: 60px 30px 0;
+    align-items: unset;
+    justify-content: unset;
+    flex-direction: column;
+    gap: 60px;
+  } 
+
+  .thirdBanner {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 20px;
+  }
+
+  .thirdText {
+    max-width: unset;
+    p:first-child { margin-bottom: 15px ;}
+    span:first-child { font-size: 20px; line-height: 24px; }
+    span:last-child { font-size: 25px; line-height: 30px; }
+    p:last-child { font-size: 12px; line-height: 16px; }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .secondText {
+    display: flex;
+    flex-direction: column;
+    max-width: unset;
+    height: 100%;
+    a { margin: auto auto 0; }
+    p:first-child { font-size: 23px; line-height: 27px; }
+    p:nth-child(2) { margin-bottom: 0; }
+  }
+
+  .SecondBanner {
+    padding: 60px 30px 90px;
+    > img {
+      position: absolute;
+      bottom: 170px; left: 50%;
+      transform: translateX(-50%);
+      max-width: 275px;
+    }
+  }
 }

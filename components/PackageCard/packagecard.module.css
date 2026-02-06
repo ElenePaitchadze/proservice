@@ -127,10 +127,20 @@
 }
 
 /* for infopreview module */
-.card2 { padding: 50px 17px 20px; width: 265px; }
-.card2 .seeMore { display: none; }
-.card2, .card2:hover { height: 395px; }
+.card2 { padding: 50px 17px 20px !important; width: 265px !important; box-shadow: none !important; }
+.card2 .seeMore { display: none !important; }
+.card2, .card2:hover { height: 395px !important; }
 
-.card2 .services .service, .card2:hover .services .service { display: none; }
-.card2 .services .service:nth-child(-n+3), .card2:hover .services .service:nth-child(-n+3) { display: flex; }
-.card2 .services .service:last-child, .card2:hover .services .service:last-child  { display: flex; }
+.card2 .services .service, .card2:hover .services .service { display: none !important; }
+.card2 .services .service:nth-child(-n+3), .card2:hover .services .service:nth-child(-n+3) { display: flex !important; }
+.card2 .services .service:last-child, .card2:hover .services .service:last-child  { display: flex !important; }
+
+@media screen and (max-width: 1230px) {
+  .card {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16); 
+    height: 580px; 
+  }
+  .card1 { height: 650px; }
+  .seeMore { display: none; }
+  .services .service { display: flex; }
+}

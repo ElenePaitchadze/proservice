@@ -7,7 +7,7 @@ export default function NewsPreview({ news }: { news: any }) {
     <section className='Container newsPreview'>
       <div className='content1'>
         <div className={styles.head}>
-          <span>სიახლეები</span>
+          <Link href={'/news'}>სიახლეები</Link>
           <Link href={'./'}><span>ინციდენტები</span></Link>
         </div>
         <div className={styles.intro}>

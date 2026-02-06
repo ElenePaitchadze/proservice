@@ -39,11 +39,14 @@
     font: 16px 'Helvetica Roman';
     line-height: 24px;
     margin-bottom: 0;
+    max-width: 435px;
   }
 }
 
 .domainCard.open > div:first-child p:first-child { margin-bottom: 5px; }
 .hostingCard > div:first-child { color: black; }
+.serverCard > div:first-child p:last-child { max-width: 480px; }
+.serverCard.open > div:first-child p:last-child { max-width: unset; }
 
 .searchCont { 
   width: 510px; 
@@ -168,6 +171,8 @@
   position: absolute; right: 40px; left: 40px;
   max-width: 1125px;
 }
+
+.mobpackages { display: none; }
 
 .modules {
   display: grid;
@@ -337,9 +342,206 @@
   margin-bottom: 23px;
 }
 
-.cards {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  > div { width: calc(50% - 10px); }
+.serverSwiper { width: 100%; }
+.serverSlide { 
+  width: 265px; 
+  > div { width: 265px; }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .infogrid { height: 670px; }
+  .domainCard, .serverCard { padding: 35px 20px 0; }
+  .searchCont { width: calc(100% - 40px); right: 20px; }
+  
+  .domainCard.open .searchCont {
+    width: calc(100% - 40px); 
+    top: 115px;
+    transform: unset;
+  }
+
+  .domainGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: absolute; left: 20px;
+    > div {
+      width: 100%;
+      div:first-child {
+        border-radius: 10px;
+        width: 50px; height: 50px;
+        img { transform: scale(0.5); }
+      }
+      div:last-child { width: calc(100% - 70px); }
+    }
+    span:first-child { font-size: 16px; line-height: 20px; }
+    span:nth-child(2) { font-size: 12px; line-height: 16px; }
+  }
+
+  .hostingCard { padding: 35px 20px 0; }
+
+  .packagesHead {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: calc(100% - 40px);
+    max-width: unset;
+    right: 20px; top: 140px;
+    > * { max-width: unset; }
+  } 
+
+  .hostingCard.open .packagesHead {
+    width: calc(100% - 500px);
+    max-width: unset;
+    > * { max-width: unset; }
+  }
+
+  .packages { display: none; }
+  .mobpackages {
+    display: block;
+    margin-top: 65px;
+    opacity: 0; visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .hostingCard.open .mobpackages {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .packageSwiper {
+    width: 100%;
+    > div > div { width: 265px !important; }
+  }
+
+  .moduleSwiper {
+    width: 100%; height: 460px;
+    > div > div { width: 260px !important; }
+  }
+
+  .webCard { 
+    padding: 35px 20px 0; 
+    > img:nth-child(2) {
+      border-radius: 50%;
+      right: 20px; top: 100px;
+      width: 100px; height: 100px;
+      object-fit: cover;
+    }
+  }
+
+  .serverCard.open > div:first-child p:last-child { top: 80px; left: 190px; }
+
+}
+
+@media screen and (max-width: 1023px) {
+  .hostingCard.open .packagesHead { min-width: 400px; }
+}
+
+@media screen and (max-width: 767px) {
+  .infogrid {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: 10px;
+    position: unset;
+    height: auto;
+  }
+
+  .domainCard ,.hostingCard, .serverCard, .webCard{
+    position: relative;
+    left: unset; right: unset; top: unset; bottom: unset;
+    width: 100%; height: 295px;
+  }
+
+  .searchCont { 
+    top: 145px;
+    form { grid-template-columns: 60fr 250fr; }
+  }
+
+  .domainCard.open, .hostingCard.open, .webCard.open, .serverCard.open {
+    border-radius: 0;
+    position: fixed;
+    top: 90px; left: 0;
+    width: 100vw; height: calc(100vh - 90px);
+    overflow: auto;
+    z-index: 990;
+  }
+
+  .domainCard.open::after { border-radius: 0; }
+  .domainGrid { margin-top: 165px; }
+
+  .hostingCard.open .packagesHead {
+    width: calc(100% - 40px);
+    top: 240px;
+    min-width: unset;
+  }
+
+  .hostingCard.open .mobpackages { margin-top: 170px; }
+
+  .webCard.open::after { content: none; }
+  .webCard.open > img:nth-of-type(3) { bottom: 250px; }
+  .webCard.open > img:nth-of-type(4) { bottom: 300px; right: 16px; }
+  .webCard.open > img:nth-of-type(5) { width: 69px; height: 69px; }
+
+  .webCard > img:nth-child(2) {
+    border-radius: 17px;
+    top: 70px;
+    width: 253px; height: auto;
+  }
+
+  .latestwork { height: 490px; width: 340px; }
+
+  .latestwork a:first-child { top: 180px; }
+  .latestwork a:nth-child(2) { bottom: 70px; }
+  .latestwork a:nth-child(3) { width: 144px; height: 154px; top: 60px; left: 20px; }
+  .latestwork a:nth-child(4) { width: 70px; height: 74px; top: 158px; left: 140px; }
+  .latestwork a:nth-child(5) { width: 102px; height: 109px; top: 0px; left: 145px; }
+  .latestwork a:nth-child(6) { width: 113px; height: 121px; top: 90px; right: 0; } 
+  .latestwork a:nth-child(7) { top: unset; bottom: 110px; right: 20px; z-index: 3; }
+  .latestwork a:nth-child(8) { top: unset; bottom: 0; right: unset; left: 15px; }
+  .latestwork a:nth-child(9) { top: unset; bottom: 10px; right: 45px; }
+
+  .seeMore { margin: 80px auto 0; }
+
+  .serverTypes {
+    flex-direction: column;
+    margin: 70px 0;
+    > div { width: 100%; }
+  }
+
+  .serverCard.open > div:first-child p:first-child {
+    font-size: 26px;
+    line-height: 30px;
+    max-width: 285px;
+  }
+
+  .serverCard.open > div:first-child p:last-child {
+    max-width: unset;
+    top: 100px; left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .domainCard.open > div:first-child p:last-child { max-width: 400px; }
+  .domainCard.open .searchCont { top: 140px; }
+  .domainGrid { margin-top: 180px; grid-template-columns: repeat(1, 1fr); }
+
+  .webCard > div:first-child {
+    max-width: unset;
+    p:first-child { margin-bottom: 10px; }
+    p:last-child { font-size: 20px; line-height: 23px; }
+  }
+
+  .webCard > img:nth-child(2) {
+    width: 190px; right: unset;
+    left: 20px; top: unset;
+    bottom: 27px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .webCard.open > img:nth-of-type(2) { top: 140px; right: 22px; left: unset; }
+  .webCard.open > img:nth-of-type(3) { left: 15px; bottom: 75px; width: 64px; height: 64px; }
+  .webCard.open > img:nth-of-type(4) { width: 43px; height: 43px; left: 160px; }
+}
+
+@media screen and (max-width: 380px) {
+  .latestwork { width: 320px; }
 }

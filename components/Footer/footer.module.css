@@ -12,7 +12,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 30px 10px;
   padding-bottom: 25px;
   margin-bottom: 30px;
 }
@@ -63,7 +64,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 30px 10px;
 }
 
 .middleitem li {
@@ -136,4 +138,46 @@
   gap: 10px;
   img { width: 42px; }
   a:last-child img { width: 30px; height: 70px; object-fit: contain; }
+}
+
+@media screen and (max-width: 767px) {
+  .middlemenu, .footertop { justify-content: unset; gap: 30px; }
+
+  .footermiddle {
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .footerbottom {
+    flex-wrap: wrap;
+    gap: 20px 60px;
+  }
+
+  .owner { 
+    border-top: 1px solid #6A6E71;
+    order: 3; gap: 40px;
+    padding-top: 40px;
+    width: 100%;
+    span { text-align: center; }
+  }
+
+  .iso { 
+    justify-content: flex-end;
+    order: 2; 
+  }
+
+  .main-content { min-height: 1300px; }
+
+  .offer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 30px 20px;
+    > span { color: black; }
+    a { 
+      justify-content: flex-start;
+      padding: 0 20px;
+      width: 100%; 
+    }
+  }
 }

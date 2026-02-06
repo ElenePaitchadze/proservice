@@ -31,3 +31,8 @@
   transition: transform 0.15s ease-out;
   transform-style: preserve-3d;
 }
+
+@media screen and (max-width: 1023px) {
+  .card { height: 400px; }
+  .websiteImg { max-width: 330px; }
+}

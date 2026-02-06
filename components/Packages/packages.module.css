@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 30px 10px;
   margin-bottom: 30px;
@@ -57,4 +58,35 @@
   justify-content: space-between;
   height: 460px;
   overflow: visible;
+}
+
+.packagesSwiper { display: none; }
+
+@media screen and (max-width: 1230px) {
+  .packages { display: none; }
+  .packagesSwiper {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    > div > div { width: 288px !important; }
+  }
+
+  .packagesHead { margin-bottom: 20px; }
+}
+
+@media screen and (max-width: 767px) {
+  .packagesHead {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .packagesHead {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    > * { width: 100% !important; }
+  }
 }

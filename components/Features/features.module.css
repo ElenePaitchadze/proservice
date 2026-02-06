@@ -17,3 +17,8 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+@media screen and (max-width: 767px) {
+  .features { padding: 25px 0; }
+  .track img { height: 27px; }
+}

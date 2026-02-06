@@ -36,9 +36,9 @@ export default function ModuleMenu({ data }: { data: IProdMenu }) {
         <Swiper
           spaceBetween={0}
           slidesPerView={'auto'}
-          className={styles.moduleSwiper}>
+          className='moduleSwiper'>
             {modules.map((mod, i) => (
-              <SwiperSlide key={i} className={styles.moduleSlide}>
+              <SwiperSlide key={i} className='moduleSlide'>
                 <ModuleCard {...mod} card1={false} />
               </SwiperSlide>
             ))}

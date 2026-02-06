@@ -15,19 +15,19 @@ export default function BannerOne() {
         <div className={styles.compare}>
           <div>
             <span>.GE</span>
-            <span>50₾ წელი</span>
+            <span><span>50₾</span> წელი</span>
           </div>
           <div>
             <span>.COM.GE</span>
-            <span>30₾ წელი</span>
+            <span><span>30₾</span> წელი</span>
           </div>
           <div>
             <span>.COM</span>
-            <span>70₾ წელი</span>
+            <span><span>70₾</span> წელი</span>
           </div>
           <div>
             <span>.NET</span>
-            <span>80₾ წელი</span>
+            <span><span>80₾</span> წელი</span>
           </div>
           <Link href={'/'} className={styles.compareLink}>
             <span>ფასების შედარება</span>

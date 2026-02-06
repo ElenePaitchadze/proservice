@@ -2,6 +2,10 @@
 import { useState } from 'react';
 import styles from './infopreview.module.css';
 import ServerCard from '../ServerCard/ServerCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const serverData = [
   {
@@ -57,11 +61,16 @@ export default function ServerInfo() {
         {serverData.map(group => (
           <div key={group.type}>
             <p className={styles.type}>{group.type === 'virtual' ? 'ვირტუალური სერვერები' : 'ფიზიკური სერვერები'}</p>
-            <div className={styles.cards}>
-              {group.servers.map(server => (
-                <ServerCard key={server.id} data={server} />
-              ))}
-            </div>
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={'auto'}
+              className={styles.serverSwiper}>
+                {group.servers.map((server) => (
+                  <SwiperSlide key={server.id} className={styles.serverSlide}>
+                    <ServerCard data={server} />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
           </div>
         ))}
       </div>
