@@ -1,5 +1,5 @@
-.bannerCont { padding: 30px 20px 0; }
-.bannerSwiper { height: 495px; border-radius: 10px 10px 0 0; }
+.bannerCont { padding: 30px 20px 0; position: relative;}
+.bannerSwiper { height: 495px; border-radius: 10px 10px 0 0; width: 100%;}
 
 .firstBannerCont {
   background: url("../../img/forest.png") center / cover no-repeat;
@@ -216,6 +216,35 @@
     span:last-child { font-size: 25px; line-height: 30px; }
     p:last-child { font-size: 12px; line-height: 16px; }
   }
+}
+
+.progressWrapper {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 0; z-index: 1000;
+  width: 100%; max-width: 1206px;
+}
+
+.progressItem {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    background: var(--primary-color);
+    position: absolute;
+    inset: 0; width: 0%;
+  }
+  &.active::after { animation: fillLine 10s linear forwards; }
+}
+
+@keyframes fillLine {
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
 @media screen and (max-width: 500px) {

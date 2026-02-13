@@ -37,6 +37,10 @@
     justify-content: center;
     width: 33px; height: 33px;
   }
+  img { 
+    max-width: 20px; 
+    filter: brightness(0) saturate(100%) invert(48%) sepia(50%) saturate(1736%) hue-rotate(178deg) brightness(90%) contrast(100%);
+  }
 }
 
 .listItem:nth-child(6n - 5) { margin-right: 80px; }

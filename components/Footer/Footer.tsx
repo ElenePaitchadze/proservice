@@ -19,34 +19,34 @@ const footerMenu = [
     { name: 'მთავარი',
       name_en: 'Home',
       children: {
-        1: { name: 'სერვისები', name_en: 'Services', href: '/' },
-        2: { name: 'დომენის რეგისტრაცია', name_en: 'Domain Registration', href: '/' },
-        3: { name: 'საპარტნიორი პროგრამა', name_en: 'Affiliate Program', href: '/' },
-        4: { name: 'ჩვენ შესახებ', name_en: 'About Us', href: '/' },
-        5: { name: 'FAQ', name_en: 'FAQ', href: '/' },
-        6: { name: 'კონტაქტი', name_en: 'Contact', href: '/' },
-        7: { name: 'პერსონალურ მონაცემთა დამუშავება', name_en: 'Privacy Policy', href: '/' },
+        1: { name: 'სერვისები', name_en: 'Services', href: '/web-design' },
+        2: { name: 'დომენის რეგისტრაცია', name_en: 'Domain Registration', href: '/domain-registration' },
+        3: { name: 'საპარტნიორი პროგრამა', name_en: 'Affiliate Program', href: '/affiliate-program' },
+        4: { name: 'ჩვენ შესახებ', name_en: 'About Us', href: '/about-us' },
+        5: { name: 'FAQ', name_en: 'FAQ', href: '/faq' },
+        6: { name: 'კონტაქტი', name_en: 'Contact', href: '/contact' },
+        7: { name: 'პერსონალურ მონაცემთა დამუშავება', name_en: 'Privacy Policy', href: '/privacy-policy' },
       }
     },
     { name: 'ჰოსტინგი',
       name_en: 'Hosting',
       children: {
-        1: { name: 'Unix ჰოსტინგი', name_en: 'Unix Hosting', href: 'https://billing.proservice.ge/index.php?rp=/store/shared-hosting' },
-        2: { name: 'Windows ჰოსტინგი', name_en: 'Windows Hosting', href: 'https://billing.proservice.ge/index.php?rp=/store/windows-shared-hosting' },
-        3: { name: 'ვირტუალური სერვერები VDS | VPS', name_en: 'virtual Servers VDS | VPS', href: 'https://billing.proservice.ge/index.php?rp=/store/virtual-ds' },
-        4: { name: 'გამოყოფილი სერვერები', name_en: 'Dedicated Servers', href: 'https://billing.proservice.ge/index.php?rp=/store/dedicated-servers' },
-        5: { name: 'კოლოკაცია', name_en: 'Colocation', href: '/' },
-        6: { name: 'ანგარიშწორება', name_en: 'Payment', href: '/' },
-        7: { name: 'წესები', name_en: 'Terms', href: '/' },
+        1: { name: 'Unix ჰოსტინგი', name_en: 'Unix Hosting', href: 'https://dev.proservice.ge/hosting/' },
+        2: { name: 'Windows ჰოსტინგი', name_en: 'Windows Hosting', href: 'https://dev.proservice.ge/hosting/' },
+        3: { name: 'ვირტუალური სერვერები VDS | VPS', name_en: 'virtual Servers VDS | VPS', href: 'https://dev.proservice.ge/hosting/' },
+        4: { name: 'გამოყოფილი სერვერები', name_en: 'Dedicated Servers', href: 'https://dev.proservice.ge/hosting/' },
+        5: { name: 'კოლოკაცია', name_en: 'Colocation', href: '/colocation' },
+        6: { name: 'ანგარიშწორება', name_en: 'Payment', href: '/payment' },
+        7: { name: 'წესები', name_en: 'Terms', href: '/terms' },
       }
     },
     { name: 'ჰოსტინგის ცნება',
       name_en: 'Definition of Hosting',
       children: {
-        1: { name: 'ვირტუალური ჰოსტინგი', name_en: 'Virtual Hosting', href: '/' },
-        2: { name: 'vds | vps', name_en: 'vds | vps', href: '/' },
-        3: { name: 'გამოყოფილი სერვერი', name_en: 'Dedicated Server', href: '/' },
-        4: { name: 'კოლოკაცია', name_en: 'Colocation', href: '/' },
+        1: { name: 'ვირტუალური ჰოსტინგი', name_en: 'Virtual Hosting', href: '/virtual-hosting' },
+        2: { name: 'vds | vps', name_en: 'vds | vps', href: '/vds-vps' },
+        3: { name: 'გამოყოფილი სერვერი', name_en: 'Dedicated Server', href: 'https://proservice.ge/?m=643' },
+        4: { name: 'კოლოკაცია', name_en: 'Colocation', href: '/co-location' },
       }
     },
 ];
@@ -171,9 +171,9 @@ export default function Footer() {
           <LanguageSwitcher />
           <div className={styles.owner}>
             <div>
-              <Link href={'/'}>Privacy Policy</Link>
-              <Link href={'/'}>Terms of Service</Link>
-              <Link href={'/'}>Site Map</Link>
+              <Link href={'/privacy-policy'}>Privacy Policy</Link>
+              <Link href={'/terms'}>Terms of Service</Link>
+              <Link href={'/site-map'}>Site Map</Link>
             </div>
             <span>© 1999 - {date.getFullYear()} ProService LTD. {t('rights')}</span>
           </div>

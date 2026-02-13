@@ -465,7 +465,7 @@
   }
 
   .domainCard.open::after { border-radius: 0; }
-  .domainGrid { margin-top: 165px; }
+  .domainGrid { margin: 165px 0 80px; }
 
   .hostingCard.open .packagesHead {
     width: calc(100% - 40px);

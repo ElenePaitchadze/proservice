@@ -683,4 +683,5 @@
   }
 
   .vpsl { width: 100%; }
+  .linkgrid a.soon::after { width: 100%; height: 65px; }
 }

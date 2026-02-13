@@ -13,9 +13,6 @@ export const metadata = {
     default: 'Pro-Service - ჰოსტინგი, ვებ დიზაინი, დომენების რეგისტრაცია .GE .COM .NET .ORG .INFO .BIZ ზონებში, ინტერნეტ რეკლამა',
   },
   description: "Pro-Service - ჰოსტინგი, ვებ დიზაინი, დომენების რეგისტრაცია .GE .COM .NET .ORG .INFO .BIZ ზონებში, ინტერნეტ რეკლამა",
-  openGraph: {
-    // images: '/path/to/default/image.jpg',
-  },
 }
  
 export function generateStaticParams() {

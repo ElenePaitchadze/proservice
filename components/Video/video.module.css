@@ -57,20 +57,24 @@
     content: '';
     position: absolute;
     border-radius: 50%;
-    top: -16px;
-    left: -16px;
-    right: -16px;
-    bottom: -16px;
+    inset: -16px;
     border: 16px solid rgba(255, 255, 255, 0.55);
     opacity: 0;
     transition: opacity 0.3s ease;
+    animation: glowOpacity 2.5s ease-in-out infinite;
   }
-  button::after { top: 0px; left: 0px; right: 0px; bottom: 0px; }
+  button::after { inset: 0; }
   button:hover::before, button:hover::after, button:hover g { opacity: 1; }
+}
+
+@keyframes glowOpacity {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
 
 .videoBtn p {
   color: white;
+  text-align: center;
   font: 20px 'Campton Light', 'Helvetica Roman';
   line-height: 26px;
   span {
@@ -116,4 +120,29 @@
   position: absolute;
   top: 8px; right: 12px;
   z-index: 10;
+}
+
+@media screen and (max-width: 1200px) {
+  .companyVideo { 
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px 20px 50px; 
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .companyVideo {
+    border-radius: 0;
+    margin-left: -20px;
+    flex-direction: column;
+    align-items: center;
+    height: unset;
+    width: calc(100% + 40px);
+    padding-bottom: 100px;
+    margin-bottom: 0;
+    &::after { border-radius: 0; }
+  }
+
+  .text { padding: 33px 20px; }
+  .videoBtn { width: 100%; }
 }

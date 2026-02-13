@@ -1,15 +1,20 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import styles from './headerlist.module.css';
-import img from '@/img/menuIcon2.jpg';
+import img from '@/img/icons/menu2.svg';
+import img1 from '@/img/icons/menu3.svg';
+import img2 from '@/img/icons/menu5.svg';
+import img3 from '@/img/icons/menu4.svg';
+import img4 from '@/img/icons/menu6.svg';
+import img5 from '@/img/icons/menu7.svg';
 
 const headerItems = [
   { name: 'ჰოსტინგი', img: img },
-  { name: 'Wordpress', img: img },
-  { name: 'SSL სერთიფიკატები', img: img },
-  { name: 'Node.js', img: img },
-  { name: 'DNS მენეჯმენტი', img: img },
-  { name: 'Cloud სერვისი', img: img },
+  { name: 'Wordpress', img: img1 },
+  { name: 'SSL სერთიფიკატები', img: img2 },
+  { name: 'Node.js', img: img3 },
+  { name: 'DNS მენეჯმენტი', img: img4 },
+  { name: 'Cloud სერვისი', img: img5 },
 ];
 
 export default function HeaderList() {

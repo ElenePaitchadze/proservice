@@ -386,6 +386,10 @@ footer {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .aboutCont { padding: 35px 20px 0; }
+}
+
 @media screen and (max-width: 767px) {
   .newsPreview { padding: 45px 20px 0; }
   .designCont { padding: 45px 20px; }

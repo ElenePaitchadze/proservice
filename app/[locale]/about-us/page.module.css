@@ -11,6 +11,7 @@
   img:first-child {
     width: 100%; height: 100%;
     object-fit: cover;
+    object-position: right;
   }
   img:last-child {
     position: absolute;
@@ -24,6 +25,7 @@
   flex-direction: column;
   justify-content: center;
   width: 56%; height: 100%;
+  padding: 0 20px;
   p:first-child {
     font: 45px 'Campton Medium', 'Helvetica Roman';
     line-height: 55px;
@@ -109,4 +111,71 @@
   }
   p { margin-bottom: 20px; }
   p:last-child { margin-bottom: 0; }
+}
+
+@media screen and (max-width: 1200px) {
+  .about1 { gap: 20px; }
+  .aboutdecor1 { width: 400px; height: auto; }
+  .text1 { width: calc(100% - 420px); }
+}
+
+@media screen and (max-width: 1024px) {
+  .head { height: 400px; }
+  .headtext {
+    p:first-child { font-size: 30px; line-height: 32px; margin-bottom: 25px; }
+    p:last-child { font-size: 16px; line-height: 20px; }
+  }
+
+  .about2 { gap: 20px; }
+  .list { width: 400px; }
+  .text2 {
+    width: calc(100% - 420px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about1 { 
+    flex-direction: column; 
+    gap: 40px; 
+    margin-bottom: 40px; 
+  }
+
+  .text1 {
+    width: 100%;
+    padding-top: 0;
+    * { font-size: 18px !important; line-height: 23px !important; }
+  }
+
+  .about2 {
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .text2, .list { width: 100%; }
+  .list { min-height: 500px; }
+}
+
+@media screen and (max-width: 767px) {
+  .head { height: 290px; }
+  .headtext {
+    width: calc(100% - 250px);
+    p:first-child { font-size: 16px; line-height: 20px; }
+    p:last-child { font-size: 12px; line-height: 16px; }
+  }
+  .imgCont { width: 250px; }
+}
+
+@media screen and (max-width: 500px) {
+  .imgCont { width: 175px; }
+  .imgCont img:last-child { display: none; }
+  .headtext { width: calc(100% - 175px); padding: 0 10px; }
+  .aboutdecor1 {
+    width: 100%;
+    img:last-child { bottom: 65px; }
+  }
+
+  .text2 h1 { font-size: 60px; line-height: 70px; }
+  .text2 h2 { font-size: 30px; line-height: 35px; }
+  .text2 h3 { margin-bottom: 10px; }
 }

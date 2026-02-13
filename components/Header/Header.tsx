@@ -38,13 +38,23 @@ const aboutUsMenu = [
   },
 ];
 
+const supportMenu = [
+  { name: "დახმარების მოთხოვნა", href: 'https://dev.proservice.ge/hosting/support-request.html' },
+  { name: "ჰოსტინგის პლათფორმები", href: '/hosting-platforms' },
+  { name: "ჰოსტინგის მართვა", href: '/hosting-management' },
+  { name: "უფასო ჰოსტინგი", href: '/free-hosting' },
+  { name: "ფასიანი ჰოსტინგი", href: '/hosting-prices' },
+  { name: "10 კითხვა ჰოსტინგისათვის", href: '/10-questions-for-hosting' },
+  { name: "ცოდნის ბაზა", href: 'https://dev.proservice.ge/hosting/knowledge-base.html' },
+];
+
 export default function Header() {
   const t = useTranslations('HomePage');
-  const [openMenu, setOpenMenu] = useState<"products" | "about" | null>(null);
+  const [openMenu, setOpenMenu] = useState<"products" | "about" | "support" | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const toggleMenu = (menu: "products" | "about") => {
+  const toggleMenu = (menu: "products" | "about" | "support") => {
     setOpenMenu(prev => (prev === menu ? null : menu));
   };
 
@@ -75,6 +85,7 @@ export default function Header() {
           <button><img src={search.src} alt="search icon" /></button>
         </form>
         <MobMenu />
+        <a href="https://dev.proservice.ge/hosting/login.html" className={styles.mobLogin}>შესვლა</a>
         <a href="https://dev.proservice.ge/hosting/register.html" className={styles.mobRegister}>რეგისტრაცია</a>
         <div className={styles.mobActions}>
           <div className='mobSocials'>
@@ -108,9 +119,21 @@ export default function Header() {
                   <ProdMenu />
                 </div>
             </div>
-            <div className={styles.menuItem}>
-              <Link href='/help'>{t('help')}</Link>
+
+            <div className={`${styles.menuItem} ${openMenu === "support" ? styles.active : ""}`}>
+              <div className={styles.menuHead} onClick={() => toggleMenu("support")}>
+                <span>{t('help')}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="7.562" height="4.653" viewBox="0 0 7.562 4.653">
+                  <path d="M8.425,12.989l3.606,3.665,3.606-3.665a.562.562,0,0,0,0-.814A.528.528,0,0,0,15.23,12h-6.4a.576.576,0,0,0-.407.989Z" transform="translate(-8.25 -12)" />
+                </svg>
+              </div>
+              <div className={styles.supportMenu}>
+                {supportMenu.map((item, index) => (
+                  <Link href={item.href} key={index}>{item.name}</Link>
+                ))}
+              </div>
             </div>
+
             <div className={`${styles.menuItem} ${openMenu === "about" ? styles.active : ""}`}>
               <div className={styles.menuHead} onClick={() => toggleMenu("about")}>
                 <span>{t('aboutUs')}</span>
