@@ -413,4 +413,6 @@ footer {
   }
 
   .portfolioGrid { grid-template-columns: repeat(1, 1fr); }
+
+  .pageTitle { font-size: 20px; line-height: 24px; }
 }

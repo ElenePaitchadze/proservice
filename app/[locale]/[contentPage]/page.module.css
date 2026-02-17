@@ -1,6 +1,6 @@
 .contentCont {
   background: #F9FAFB; 
-  padding: 50px 20px 110px; 
+  padding: 50px 20px 110px !important; 
 }
 
 .contentText {
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .contentCont { padding: 30px 20px 100px; }
+  .contentCont { padding: 30px 20px 100px !important; }
   .contentText { 
     font-size: 12px;
     line-height: 16px;
