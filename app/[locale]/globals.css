@@ -308,6 +308,8 @@ footer {
   .show { right: 0; }
 }
 
+.blogs-cont { padding: 50px 20px 110px !important; }
+
 @media screen and (max-width: 1230px) {
   .header-content { gap: 20px; }
 }

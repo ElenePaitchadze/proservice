@@ -26,13 +26,13 @@ const aboutUsMenu = [
       2: { name: 'სიახლეები', href: '/news' },
       3: { name: 'ღონისძიებები', href: '/events' },
       4: { name: 'ბლოგი', href: '/blogs' },
+      5: { name: 'სასტუმროს მართვის სისტემა', href: '/hotel-management' },
     }
   },
   { name: 'უსაფრთხოება',
     img: menuicon2,
     children: {
       1: { name: 'წესები', href: '/terms' },
-      2: { name: 'დახმარება', href: '/assistance' },
       3: { name: 'კონტაქტი', href: '/contact' },
     }
   },

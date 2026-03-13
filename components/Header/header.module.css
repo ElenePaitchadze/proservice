@@ -97,7 +97,7 @@
   position: absolute;
   left: -40px; top: 100%;
   padding: 33px 45px 33px 40px;
-  min-width: 455px;
+  min-width: 475px;
   &::before {
     content: '';
     background: #E9E9E9;
