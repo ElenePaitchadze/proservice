@@ -1,114 +1,59 @@
 import NewsPreview from "@/components/NewsPreview/NewsPreview";
 import NewsCard from "@/components/NewsCard/NewsCard";
-import newsImg from '@/img/newsDummy.png';
 import styles from './page.module.css';
-import { getTranslations } from 'next-intl/server';
+import getNews from "@/app/api/news";
+import PaginationControls from "@/components/PaginationControls/PaginationControls";
 
-const newsItems = [
-  { id: '127',
-    title: 'ახალი თაობის ღრუბლოვანი ინფრასტრუქტურა: 40%-ით უფრო სწრაფი მუშაობა',
-    title_en: "Next-generation cloud infrastructure: 40% faster performance",
-    desc: 'ჩვენ განვაახლეთ ჩვენი მონაცემთა ცენტრები უახლესი ტექნოლოგიებით, რაც თქვენი ვებსაიტებისა და აპლიკაციებისთვის უპრეცედენტო სიჩქარესა და საიმედოობას უზრუნველყოფს..',
-    desc_en: 'We have upgraded our data centers with the latest technologies, providing unprecedented speed and reliability for your websites and applications.',
-    date: '18 ნოე, 2025',
-    img: newsImg,
-    slug: 'wooCommerce-plugins'
-  },
-  { id: '128',
-    title: 'რატომ არის ხარისხიანი ჰოსტინგი მნიშვნელოვანი',
-    title_en: "Why quality hosting is important",
-    desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-    desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-    date: '11 ნოე, 2025',
-    img: newsImg,
-    slug: 'quality-hosting'
-  },
-  { id: '129',
-    title: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია',
-    title_en: "Proservice Company is the winner of the 2023 Golden Brand",
-    desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-    desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-    date: '11 ნოე, 2025',
-    img: newsImg,
-    slug: 'golden-brand-winner'
-  },
-  { id: '130',
-    title: 'სიახლე ახალ მომხმარებლებს!',
-    title_en: "News for new users!",
-    desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-    desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-    date: '11 მაი, 2023',
-    img: newsImg,
-    slug: 'news-for-new-users'
-  },
-  { id: '131',
-    title: 'ახალი თაობის ღრუბლოვანი ინფრასტრუქტურა: 40%-ით უფრო სწრაფი მუშაობა',
-    title_en: "Next-generation cloud infrastructure: 40% faster performance",
-    desc: 'ჩვენ განვაახლეთ ჩვენი მონაცემთა ცენტრები უახლესი ტექნოლოგიებით, რაც თქვენი ვებსაიტებისა და აპლიკაციებისთვის უპრეცედენტო სიჩქარესა და საიმედოობას უზრუნველყოფს..',
-    desc_en: 'We have upgraded our data centers with the latest technologies, providing unprecedented speed and reliability for your websites and applications.',
-    date: '18 ნოე, 2025',
-    img: newsImg,
-    slug: 'wooCommerce-plugins'
-  },
-  { id: '132',
-    title: 'რატომ არის ხარისხიანი ჰოსტინგი მნიშვნელოვანი',
-    title_en: "Why quality hosting is important",
-    desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-    desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-    date: '11 ნოე, 2025',
-    img: newsImg,
-    slug: 'quality-hosting'
-  },
-  { id: '133',
-    title: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია',
-    title_en: "Proservice Company is the winner of the 2023 Golden Brand",
-    desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-    desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-    date: '11 ნოე, 2025',
-    img: newsImg,
-    slug: 'golden-brand-winner'
-  },
-  { id: '134',
-    title: 'სიახლე ახალ მომხმარებლებს!',
-    title_en: "News for new users!",
-    desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-    desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-    date: '11 მაი, 2023',
-    img: newsImg,
-    slug: 'news-for-new-users'
-  },
-  { id: '135',
-    title: 'ახალი თაობის ღრუბლოვანი ინფრასტრუქტურა: 40%-ით უფრო სწრაფი მუშაობა',
-    title_en: "Next-generation cloud infrastructure: 40% faster performance",
-    desc: 'ჩვენ განვაახლეთ ჩვენი მონაცემთა ცენტრები უახლესი ტექნოლოგიებით, რაც თქვენი ვებსაიტებისა და აპლიკაციებისთვის უპრეცედენტო სიჩქარესა და საიმედოობას უზრუნველყოფს..',
-    desc_en: 'We have upgraded our data centers with the latest technologies, providing unprecedented speed and reliability for your websites and applications.',
-    date: '18 ნოე, 2025',
-    img: newsImg,
-    slug: 'wooCommerce-plugins'
-  },
-];
+import { getTranslations, getLocale } from 'next-intl/server';
 
-export default async function News() {
+type Props = {
+  searchParams: Promise<{ page?: string }>
+}
+
+export default async function News({ searchParams }: Props) {
+
+  const { page } = await searchParams;
+  const currentPage = parseInt(page ?? '1');
+
   const t = await getTranslations('HomePage');
+  const locale = await getLocale();
+
+  let newsItems: any = { data: [] };
+
+  try {
+    newsItems = await getNews(8, locale === 'ge' ? 'geo' : 'eng', currentPage);
+  } catch (error) {
+    console.error('Failed to fetch news:', error);
+  }
 
   return (
     <>
-      <NewsPreview news={newsItems[0]}/>
+      {newsItems.data.length > 0 && (
+        <NewsPreview news={newsItems.data[0]} />
+      )}
+
       <section className="Container">
         <div className="content1">
-          {newsItems.length > 0 ? (
+          {newsItems.data.length > 0 ? (
             <>
               <div className={styles.newsGrid}>
-                {newsItems.map((news: any) => (
-                  <NewsCard key={news.id} news={news} />
+                {newsItems.data.map((news: any) => (
+                  <NewsCard key={news.newsid} news={news} />
                 ))}
               </div>
+
+              <PaginationControls
+                total={newsItems.navbar}
+                destination="news"
+              />
             </>
           ) : (
-            <p className='noDetailsFound'>{t('informationNotFound')}</p>
+            <p className='noDetailsFound'>
+              ინფორმაცია არ მოიძებნა
+            </p>
           )}
         </div>
       </section>
     </>
-  )
+  );
 }

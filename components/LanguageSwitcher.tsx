@@ -1,12 +1,14 @@
 'use client';
 
-import { useRouter } from '@/i18n/navigation';
+import { useRouter, usePathname } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
+  const pathname = usePathname();
+
   const [checked, setChecked] = useState(locale === 'en');
 
   useEffect(() => {
@@ -21,8 +23,7 @@ export default function LanguageSwitcher() {
     const expires = 'expires=' + date.toUTCString();
     document.cookie = `NEXT_LOCALE=${newLocale}; ${expires}; path=/;`;
 
-    // Update UI + redirect
-    router.replace('/', { locale: newLocale });
+    router.replace(pathname, { locale: newLocale });
   };
 
   return (

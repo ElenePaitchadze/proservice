@@ -46,22 +46,23 @@
     -webkit-box-orient: vertical;
     transition: all 0.3s ease;
   }
-  div:nth-child(2) {
-    color: #787878;
-    font: 14px 'Helvetica Roman';
-    line-height: 17px; 
-    margin-bottom: 43px;
-    display: -webkit-box;
-    max-height: 68px;
-    overflow: hidden;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
-  }
   > img {
     width: 16px;
     position: absolute;
     right: 30px; bottom: 32px;
     transition: all 0.3s ease;
   }
+}
+
+.text {
+  color: #787878;
+  font: 14px 'Helvetica Roman';
+  line-height: 17px; 
+  margin-bottom: 43px;
+  display: -webkit-box;
+  height: 68px;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
 }

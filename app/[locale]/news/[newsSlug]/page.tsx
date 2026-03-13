@@ -1,107 +1,96 @@
 import { Metadata } from 'next'
-import newsImg from '@/img/newsDummy.png';
-import NewsDetails from '@/components/NewsDetails/NewsDetails';
-import { getTranslations } from 'next-intl/server';
+import NewsDetails from '@/components/NewsDetails/NewsDetails'
+import { getTranslations } from 'next-intl/server'
+import getNews, { getNewsItem } from '@/app/api/news'
+import url from '@/app/api/url'
 
 type Props = {
-  params: Promise<{ newsSlug: string; locale: string }>;
+  params: Promise<{
+    newsSlug: string
+    locale: string
+  }>
 }
 
-const newsDetails = [
-  { id: '127',
-    title: 'ახალი თაობის ღრუბლოვანი ინფრასტრუქტურა: 40%-ით უფრო სწრაფი მუშაობა',
-    title_en: "Next-generation cloud infrastructure: 40% faster performance",
-    desc: 'ჩვენ განვაახლეთ ჩვენი მონაცემთა ცენტრები უახლესი ტექნოლოგიებით, რაც თქვენი ვებსაიტებისა და აპლიკაციებისთვის უპრეცედენტო სიჩქარესა და საიმედოობას უზრუნველყოფს..',
-    desc_en: 'We have upgraded our data centers with the latest technologies, providing unprecedented speed and reliability for your websites and applications.',
-    date: '18 ნოე, 2025',
-    img: newsImg,
-    slug: 'wooCommerce-plugins',
-    similarNews: [
-      { id: '128',
-        title: 'რატომ არის ხარისხიანი ჰოსტინგი მნიშვნელოვანი',
-        title_en: "Why quality hosting is important",
-        desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-        desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-        date: '11 ნოე, 2025',
-        img: newsImg,
-        slug: 'quality-hosting'
-      },
-      { id: '129',
-        title: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია',
-        title_en: "Proservice Company is the winner of the 2023 Golden Brand",
-        desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-        desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-        date: '11 ნოე, 2025',
-        img: newsImg,
-        slug: 'golden-brand-winner'
-      },
-      { id: '133',
-        title: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია',
-        title_en: "Proservice Company is the winner of the 2023 Golden Brand",
-        desc: 'კომპანია „პროსერვისი“ 2023 წლის Golden Brand-ის გამარჯვებულია. კომპანიამ ჯილდო ჰოსტინგ პროვაიდერის ნომინაციაში მოიპოვა.',
-        desc_en: 'The company "Proservice" is the winner of the 2023 Golden Brand. The company won the award in the Hosting Provider nomination.',
-        date: '11 ნოე, 2025',
-        img: newsImg,
-        slug: 'golden-brand-winner'
-      },
-    ]
-  },
-];
-
 function stripHtmlTags(html: string): string {
-  return html.replace(/<[^>]*>/g, '');
+  return html.replace(/<[^>]*>/g, '')
 }
 
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
+
   const { newsSlug, locale } = await params;
 
-  // const newsDetails = await innernews1(newsSlug);
-  const newItem = newsDetails;
-  const languageCode = locale === 'ge' ? 'geo' : 'eng';
-  // const filteredNews = newItem.filter((c: any) => c.lang === languageCode);
-  const filteredNews = newItem;
+  try {
+    const newsDetails = await getNewsItem(locale === 'ge' ? 'geo' : 'eng', newsSlug);
 
-  if (filteredNews.length > 0) {
-    const news = filteredNews[0];
-    const sanitizedText = news.desc ? stripHtmlTags(news.desc).slice(0, 200) : 'News article';
-    
-    return {
-      description: sanitizedText,
-      openGraph: {
-        title: news.title,
+    if (newsDetails.data.length > 0) {
+      const news = newsDetails.data[0];
+
+      const sanitizedText = news.text
+        ? stripHtmlTags(news.text).slice(0, 200)
+        : 'News article';
+
+      return {
+        title: news.newstitle,
         description: sanitizedText,
-        images: news.img ? [`${news.img}`] : [],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: news.title,
-        description: sanitizedText,
-        images: news.img ? [`${news.img}`] : [],
-      },
+        openGraph: {
+          title: news.title,
+          description: sanitizedText,
+          images: news.img ? [`${url}${news.img}`] : [],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: news.newstitle,
+          description: sanitizedText,
+          images: news.img ? [`${url}${news.img}`] : [],
+        }
+      };
     }
+
+  } catch (error) {
+    console.error('Metadata fetch failed:', error);
   }
 
   return {
     title: 'News Article Not Found',
     description: 'The requested news article could not be found.',
-  }
+  };
 }
 
-export default async function InnerNews({ params }: Props) {
+export default async function Page({
+  params
+}: {
+  params: Promise<{ locale: string; newsSlug: string }>
+}) {
   const { locale, newsSlug } = await params;
-  const t = await getTranslations('news');
-  
+
+  const t = await getTranslations('news')
+
+  let newsDetails: any = { data: [] };
+  let similarNews: any[] = [];
+
+  try {
+    newsDetails = await getNewsItem(locale === 'ge' ? 'geo' : 'eng', newsSlug);
+    const newsList = await getNews(8, locale === 'ge' ? 'geo' : 'eng', 1);
+    similarNews = newsList.data.slice(0, 3);
+
+  } catch (error) {
+    console.error('Failed to fetch news:', error)
+  }
+
   return (
     <>
-      {newsDetails.length > 0 ? (
-        <NewsDetails item={newsDetails[0]}/>
+      {newsDetails.data.length > 0 ? (
+        <NewsDetails
+          item={newsDetails.data[0]}
+          similarNews={similarNews}
+        />
       ) : (
         <div className='customNotFound'>
           {t('informationNotFound')}
         </div>
       )}
     </>
-  );
+  )
 }

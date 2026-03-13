@@ -8,8 +8,9 @@ import mail from '@/img/mailIcon.svg';
 import link from '@/img/link.svg';
 import NewsCard from '../NewsCard/NewsCard';
 import { FacebookShareButton, TwitterShareButton, EmailShareButton } from 'react-share';
+import url from '@/app/api/url';
 
-export default function NewsDetails({item}: any) {
+export default function NewsDetails({ item, similarNews }: any) {
   const handleCopyLink = async () => {
     try {
       await navigator.clipboard.writeText(window.location.href);
@@ -32,32 +33,18 @@ export default function NewsDetails({item}: any) {
       <section className="Container news-cont">
         <div className="content">
           <div className={styles.news}>
-            <p className={styles.title}>{item.title}</p>
+            <p className={styles.title}>{item.newstitle}</p>
             <p className={styles.date}>
               <img src={calendar.src} alt="calendar icon" />
-              <span>{item.date}</span>
+              <span>{item.newsdate}</span>
             </p>
-            <img className={styles.newsImg} src={item.img.src} alt="news image" />
-            <div className={styles.text}>
-              შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, 
-              რეალურთან მაქსიმალურად მიახლოებული შაბლონი წარუდგინონ შემფასებელს. ხშირადაა შემთხვევა, 
-              როდესაც დიზაინის შესრულებისას საჩვენებელია, თუ როგორი იქნება ტექსტის ბლოკი. სწორედ ასეთ 
-              დროს არის მოსახერხებელი ამ გენერატორით შექმნილი ტექსტის გამოყენება, რადგან უბრალოდ „ტექსტი 
-              ტექსტი ტექსტი“ ან სხვა გამეორებადი სიტყვების ჩაყრა, ხელოვნურ ვიზუალურ სიმეტრიას ქმნის და 
-              არაბუნებრივად გამოიყურება. <br /><br />
-              შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, 
-              რეალურთან მაქსიმალურად მიახლოებული შაბლონი წარუდგინონ შემფასებელს. ხშირადაა შემთხვევა, 
-              როდესაც დიზაინის შესრულებისას საჩვენებელია, თუ როგორი იქნება ტექსტის ბლოკი. სწორედ ასეთ 
-              დროს არის მოსახერხებელი ამ გენერატორით შექმნილი ტექსტის გამოყენება, რადგან უბრალოდ „ტექსტი 
-              ტექსტი ტექსტი“ ან სხვა გამეორებადი სიტყვების ჩაყრა, ხელოვნურ ვიზუალურ სიმეტრიას ქმნის და 
-              არაბუნებრივად გამოიყურება. <br /><br />
-              შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, 
-              რეალურთან მაქსიმალურად მიახლოებული შაბლონი წარუდგინონ შემფასებელს. ხშირადაა შემთხვევა, 
-              როდესაც დიზაინის შესრულებისას საჩვენებელია, თუ როგორი იქნება ტექსტის ბლოკი. სწორედ ასეთ 
-              დროს არის მოსახერხებელი ამ გენერატორით შექმნილი ტექსტის გამოყენება, რადგან უბრალოდ „ტექსტი 
-              ტექსტი ტექსტი“ ან სხვა გამეორებადი სიტყვების ჩაყრა, ხელოვნურ ვიზუალურ სიმეტრიას ქმნის და 
-              არაბუნებრივად გამოიყურება.
-            </div>
+            <img className={styles.newsImg} src={`${url}/${item.img}`} alt="news image" />
+            <div
+              className={styles.text}
+              dangerouslySetInnerHTML={{
+                __html: item.text
+              }}
+            />
             <div className='share'>
               <span>გაზიარება</span>
               <div>
@@ -79,8 +66,8 @@ export default function NewsDetails({item}: any) {
           <div className={styles.otherNews}>
             <p>სხვა სიახლეები</p>
             <div className={styles.newsGrid}>
-              {item.similarNews.map((news: any) => (
-                <NewsCard key={news.id} news={news} />
+              {similarNews.map((news: any) => (
+                <NewsCard key={news.newsid} news={news} />
               ))}
             </div>
           </div>
