@@ -7,7 +7,7 @@ import arrow from '@/img/arrowright.png';
 import url from '@/app/api/url';
 import defaultImg from '@/img/noImage.png';
 
-export default function NewsCard({ news }: { news: any }) {
+export default function NewsCard({ news, direction }: { news: any, direction: string }) {
   const [imgSrc, setImgSrc] = useState(news.img ? `${url}${news.img}` : defaultImg.src);
 
   const handleError = () => {
@@ -15,7 +15,7 @@ export default function NewsCard({ news }: { news: any }) {
   };
 
   return (
-    <Link href={`/news/${news.newsid}`} className={styles.card}>
+    <Link href={`/${direction}/${news.newsid}`} className={styles.card}>
       <div className={styles.cardImg}>
         <img src={imgSrc} alt="news image" onError={handleError} />
       </div>

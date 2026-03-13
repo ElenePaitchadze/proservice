@@ -10,7 +10,7 @@ import NewsCard from '../NewsCard/NewsCard';
 import { FacebookShareButton, TwitterShareButton, EmailShareButton } from 'react-share';
 import url from '@/app/api/url';
 
-export default function NewsDetails({ item, similarNews }: any) {
+export default function NewsDetails({ item, similarNews, type }: any) {
   const handleCopyLink = async () => {
     try {
       await navigator.clipboard.writeText(window.location.href);
@@ -23,7 +23,7 @@ export default function NewsDetails({ item, similarNews }: any) {
   return (
     <>
       <div className={styles.goback}>
-        <Link href={'/news'}>
+        <Link href={type == 'news' ? '/news' : '/blogs'}>
           <svg xmlns="http://www.w3.org/2000/svg" width="20.051" height="11.647" viewBox="0 0 20.051 11.647">
             <path d="M21.637,12.409H4m0,0L8.409,8M4,12.409l4.409,4.409" transform="translate(-2.586 -6.586)" />
           </svg>
@@ -64,10 +64,10 @@ export default function NewsDetails({ item, similarNews }: any) {
             </div>
           </div>
           <div className={styles.otherNews}>
-            <p>სხვა სიახლეები</p>
+            <p>{type == 'news' ? 'სხვა სიახლეები' : 'სხვა ბლოგები'}</p>
             <div className={styles.newsGrid}>
               {similarNews.map((news: any) => (
-                <NewsCard key={news.newsid} news={news} />
+                <NewsCard key={news.newsid} news={news} direction={type} />
               ))}
             </div>
           </div>

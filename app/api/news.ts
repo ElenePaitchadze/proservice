@@ -17,9 +17,9 @@ export default async function getNews(type: number, lng: string, page: number) {
   }
 }
 
-export async function getNewsItem(lng: string, news_id: string) {
+export async function getNewsItem(type: number, lng: string, news_id: string) {
   try {
-    const res = await fetch(`${url}api.php?m=8&&lang=${lng}&&news_id=${news_id}`, { 
+    const res = await fetch(`${url}api.php?m=${type}&&lang=${lng}&&news_id=${news_id}`, { 
       cache: 'no-cache' 
     });
 

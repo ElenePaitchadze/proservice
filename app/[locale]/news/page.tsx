@@ -38,7 +38,7 @@ export default async function News({ searchParams }: Props) {
             <>
               <div className={styles.newsGrid}>
                 {newsItems.data.map((news: any) => (
-                  <NewsCard key={news.newsid} news={news} />
+                  <NewsCard key={news.newsid} news={news} direction="news" />
                 ))}
               </div>
 

@@ -22,7 +22,7 @@ export async function generateMetadata(
   const { newsSlug, locale } = await params;
 
   try {
-    const newsDetails = await getNewsItem(8, locale === 'ge' ? 'geo' : 'eng', newsSlug);
+    const newsDetails = await getNewsItem(742, locale === 'ge' ? 'geo' : 'eng', newsSlug);
 
     if (newsDetails.data.length > 0) {
       const news = newsDetails.data[0];
@@ -61,9 +61,9 @@ export async function generateMetadata(
 export default async function Page({
   params
 }: {
-  params: Promise<{ locale: string; newsSlug: string }>
+  params: Promise<{ locale: string; blogsSlug: string }>
 }) {
-  const { locale, newsSlug } = await params;
+  const { locale, blogsSlug } = await params;
 
   const t = await getTranslations('news')
 
@@ -71,8 +71,8 @@ export default async function Page({
   let similarNews: any[] = [];
 
   try {
-    newsDetails = await getNewsItem(8, locale === 'ge' ? 'geo' : 'eng', newsSlug);
-    const newsList = await getNews(8, locale === 'ge' ? 'geo' : 'eng', 1);
+    newsDetails = await getNewsItem(742, locale === 'ge' ? 'geo' : 'eng', blogsSlug);
+    const newsList = await getNews(742, locale === 'ge' ? 'geo' : 'eng', 1);
     similarNews = newsList.data.slice(0, 3);
 
   } catch (error) {
@@ -85,7 +85,7 @@ export default async function Page({
         <NewsDetails
           item={newsDetails.data[0]}
           similarNews={similarNews}
-          type='news'
+          type='blogs'
         />
       ) : (
         <div className='customNotFound'>

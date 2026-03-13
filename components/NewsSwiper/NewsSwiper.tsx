@@ -19,7 +19,7 @@ export default function NewsSwiper({ news }: { news: any[] }) {
           className={styles.newsSwiper}>
           {news.map((item) => (
             <SwiperSlide key={item.id} className={styles.newsSlide}>
-              <NewsCard news={item} />
+              <NewsCard news={item} direction='news' />
             </SwiperSlide>
           ))}
         </Swiper>

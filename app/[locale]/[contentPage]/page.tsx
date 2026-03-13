@@ -17,7 +17,7 @@ export default async function ContentPage({ params }: Props) {
   const catId = contentIds[contentPage];
 
   if (!catId) {
-    return <div>Content page not found</div>;
+    return <div className='noDetailsFound' style={{marginTop: '70px'}}>Content page not found</div>;
   }
 
   let contentData: any = null;
@@ -37,7 +37,7 @@ export default async function ContentPage({ params }: Props) {
           {contentData ? (
             <div dangerouslySetInnerHTML={{ __html: contentData.content }} />
           ) : (
-            <p>Content not found or failed to load.</p>
+            <p className={styles.noContent}>Content not found or failed to load.</p>
           )}
         </div>
       </div>

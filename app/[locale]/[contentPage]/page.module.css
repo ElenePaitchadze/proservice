@@ -15,6 +15,11 @@
   ul { padding-left: 15px; }
 }
 
+.noContent {
+  font: 20px 'BPG Mrgvlovani Caps 2010';
+  line-height: 24px;
+}
+
 @media screen and (max-width: 767px) {
   .contentCont { padding: 30px 20px 100px !important; }
   .contentText { 
